@@ -53,7 +53,9 @@ module.exports = {
     '@nuxtjs/pwa'
   ],
 
-  axios: {},
+  axios: {
+    baseURL: process.env.BASE_URL || 'http://localhost:3000'
+  },
 
   build: {
     extend(config, ctx) {}
