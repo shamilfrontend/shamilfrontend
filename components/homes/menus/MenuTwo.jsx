@@ -1,10 +1,11 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 
-import { usePathname } from "next/navigation";
-import Link from "next/link";
 import { menuItems } from "@/data/menu";
+
 export default function MenuTwo() {
   const pathname = usePathname();
   return (
@@ -13,7 +14,7 @@ export default function MenuTwo() {
         <nav className="bastami-main-menu main_menu">
           <ul>
             {menuItems.map((elm, i) => (
-              <li className={`${pathname == elm.href && "active"}  `} key={i}>
+              <li className={`${pathname === elm.href && "active"}  `} key={i}>
                 <Link href={elm.href}>
                   <span>
                     <i style={{ fontSize: "25px" }} className={elm.icon}></i>

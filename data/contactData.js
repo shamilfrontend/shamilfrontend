@@ -6,7 +6,7 @@ export const contactData = [
     iconClass: "fa-regular fa-mobile",
     text: {
       label: "Phone",
-      value: "+123 456 7890",
+      value: "+7 960 505 6089",
     },
   },
   {
@@ -16,7 +16,7 @@ export const contactData = [
     iconClass: "fa-regular fa-envelope-open-text",
     text: {
       label: "Email",
-      value: "example@mail.com",
+      value: "shoma.alisultanov@yandex.ru",
     },
   },
   {
@@ -26,7 +26,7 @@ export const contactData = [
     iconClass: "fa-solid fa-location-dot",
     text: {
       label: "Location",
-      value: "Hong kong china",
+      value: "Dagestan",
     },
   },
   {
@@ -36,7 +36,7 @@ export const contactData = [
     iconClass: "fa-light fa-calendar-days",
     text: {
       label: "Birthday",
-      value: "May 27, 1990",
+      value: "Apr 22, 1992",
     },
   },
 ];
