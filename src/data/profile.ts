@@ -25,7 +25,6 @@ export interface ResumeItem {
 
 export interface SkillItem {
   title: string;
-  level: number;
 }
 
 export interface WorkItem {
@@ -38,12 +37,6 @@ export interface WorkItem {
   description: string[];
 }
 
-export interface BlogItem {
-  date: string;
-  category: string;
-  title: string;
-}
-
 export interface NavItem {
   to: string;
   label: string;
@@ -51,158 +44,180 @@ export interface NavItem {
 }
 
 export const profileInfo = {
-  brand: 'Bostami',
-  name: 'Monalisa Ashley',
-  role: 'Ui/Ux Designer',
-  phone: '+123 456 7890',
-  email: 'example@mail.com',
-  location: 'Hong Kong China',
-  birthday: 'May 27, 1990',
+  brand: 'ShamilFrontend',
+  name: 'Shamil Alisultanov',
+  role: 'Фулстек-разработчик',
+  phone: '+7 960 5056089',
+  email: 'shoma.alisultanov@yandex.ru',
+  location: 'Россия, Республика Дагестан',
+  birthday: '22 апреля 1992',
   aboutParagraphs: [
-    "I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media. I enjoy turning complex problems into simple, beautiful and intuitive designs.",
-    'My aim is to bring across your message and identity in the most creative way. I created web design for many famous brand companies.',
+    'Я веб-разработчик, который любит превращать сложные задачи в понятные и удобные решения. Работаю с интерфейсами, архитектурой и фронтенд-разработкой.',
+    'Мне важно, чтобы продукт был не только красивым, но и полезным: быстрым, логичным и комфортным для пользователя.',
   ],
   contactText:
-    'I am always open to discussing product design work or partnership opportunities.',
+    'Я всегда открыт к обсуждению новых проектов и сотрудничества.',
 };
 
 export const navItems: NavItem[] = [
-  { to: '/about', label: 'About', icon: 'user' },
-  { to: '/resume', label: 'Resume', icon: 'file' },
-  { to: '/works', label: 'Works', icon: 'briefcase' },
-  { to: '/blogs', label: 'Blogs', icon: 'book' },
-  { to: '/contact', label: 'Contact', icon: 'mail' },
+  { to: '/about', label: 'Обо мне', icon: 'user' },
+  { to: '/resume', label: 'Резюме', icon: 'file' },
+  { to: '/works', label: 'Работы', icon: 'briefcase' },
 ];
 
 export const socialLinks: SocialLink[] = [
-  { label: 'Facebook', icon: 'facebook', url: '#' },
-  { label: 'Twitter', icon: 'twitter', url: '#' },
-  { label: 'Instagram', icon: 'instagram', url: '#' },
-  { label: 'LinkedIn', icon: 'linkedin', url: '#' },
+  { label: 'Telegram', icon: 'telegram', url: 'https://t.me/shamilfrontend' },
+  { label: 'VK', icon: 'vk', url: 'https://vk.com/shamilfrontend' },
+  { label: 'GitHub', icon: 'github', url: 'https://github.com/shamilfrontend' },
 ];
 
 export const contactItems: ContactItem[] = [
-  { label: 'Phone', value: profileInfo.phone, icon: 'phone' },
-  { label: 'Email', value: profileInfo.email, icon: 'mail' },
-  { label: 'Location', value: profileInfo.location, icon: 'pin' },
-  { label: 'Birthday', value: profileInfo.birthday, icon: 'calendar' },
+  { label: 'Телефон', value: profileInfo.phone, icon: 'phone' },
+  { label: 'Почта', value: profileInfo.email, icon: 'mail' },
+  { label: 'Локация', value: profileInfo.location, icon: 'pin' },
+  { label: 'Дата рождения', value: profileInfo.birthday, icon: 'calendar' },
 ];
 
 export const services: ServiceItem[] = [
   {
-    title: 'Ui/Ux Design',
+    title: 'Frontend-разработка',
     description:
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod tincidunt volutpat.',
+      'Разрабатываю быстрые и масштабируемые интерфейсы на Vue 3, TypeScript и современном стеке.',
     tone: 'pink',
-    icon: 'palette',
+    icon: 'code',
   },
   {
-    title: 'App Development',
+    title: 'Разработка приложений',
     description:
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod tincidunt volutpat.',
+      'Создание современных веб-приложений с продуманной архитектурой и высокой производительностью.',
     tone: 'blue',
     icon: 'code',
   },
   {
-    title: 'Photography',
+    title: 'Backend и API',
     description:
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod tincidunt volutpat.',
+      'Проектирую и реализую серверную часть, API и интеграции для полноценных веб-продуктов.',
     tone: 'blue',
-    icon: 'camera',
+    icon: 'code',
   },
   {
-    title: 'Web Development',
+    title: 'Веб-разработка',
     description:
-      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod tincidunt volutpat.',
+      'Разработка сайтов и интерфейсов с адаптивностью, чистым кодом и удобной поддержкой.',
     tone: 'pink',
     icon: 'code',
   },
 ];
 
 export const educationItems: ResumeItem[] = [
-  { period: '2021 - Present', title: 'Ph.D in Horriblensess', place: 'Harvard University, Cambridge' },
-  { period: '2018 - 2020', title: 'Computer Science', place: 'Imperialize Technical Institute' },
+  {
+    period: 'Специалист при МГТУ им. Баумана',
+    title: 'HTML/CSS, JS, React, PHP',
+    place: 'Кроссбраузерная верстка, HTML5/CSS3, основы юзабилити',
+  },
+  {
+    period: 'Дополнительное обучение',
+    title: 'CS50, Udemy, Loftschool, ITVDN',
+    place: 'Docker, Express, NestJS, современный JavaScript и Vue',
+  },
 ];
 
 export const experienceItems: ResumeItem[] = [
-  { period: '2022 - Present', title: 'Senior Product Designer', place: 'Creative Studio Inc.' },
-  { period: '2019 - 2022', title: 'UI/UX Designer', place: 'Theme Junction Ltd.' },
+  {
+    period: '2024 - настоящее время',
+    title: 'FrontEnd Lead — Передовые Платежные Решения',
+    place: 'Nuxt 3, Vue 3, TypeScript, SCSS; архитектура, код-ревью, командная работа',
+  },
+  {
+    period: '2021 - 2024',
+    title: 'Senior Frontend Developer — Газпром ID',
+    place: 'Vue 3, TypeScript, дизайн-системы, продуктовая разработка',
+  },
+  {
+    period: '2019 - 2022',
+    title: 'Frontend Developer — МТ-Технологии',
+    place: 'Vue 3, TypeScript, дизайн-системы, продуктовая разработка',
+  },
+  {
+    period: '2018 - 2019',
+    title: 'Frontend Developer — МТ-Интеграция',
+    place: 'Vue 3, TypeScript, дизайн-системы, продуктовая разработка',
+  },
+  {
+    period: '2016 - 2018',
+    title: 'Frontend Developer — LEOMAX',
+    place: 'Vue 3, TypeScript, дизайн-системы, продуктовая разработка',
+  },
 ];
 
 export const skills: SkillItem[] = [
-  { title: 'Web Design', level: 92 },
-  { title: 'Mobile App', level: 84 },
-  { title: 'Illustrator', level: 77 },
-  { title: 'Photoshop', level: 81 },
+  { title: 'HTML' },
+  { title: 'CSS' },
+  { title: 'SCSS' },
+  { title: 'Адаптивная верстка' },
+  { title: 'JavaScript' },
+  { title: 'TypeScript' },
+  { title: 'Vite' },
+  { title: 'Vue.js' },
+  { title: 'Nuxt.js' },
+  { title: 'Node.js' },
+  { title: 'Express.js' },
+  { title: 'REST' },
+  { title: 'MongoDB' },
+  { title: 'Docker' },
+  { title: 'Docker Compose' },
+  { title: 'Git' },
+  { title: 'Figma' },
+  { title: 'PhotoShop' },
 ];
 
 export const works: WorkItem[] = [
   {
     category: 'UI/UX',
     title: 'Chul Urina',
-    project: 'Website',
+    project: 'Сайт',
     client: 'Envato',
     languages: 'Photoshop, Figma',
     preview: 'www.envato.com',
     description: [
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga consequatur delectus porro sapiente molestias, magni quasi sed, enim corporis omnis doloremque soluta inventore dolorum consequr quo obcaecati rerum sit non.',
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga consequatur delectus porro sapiente molestias, magni quasi sed, enim corporis omnis doloremque soluta inventore dolorum consequr quo obcaecati rerum sit non.',
+      'Полноценный дизайн-проект с акцентом на чистую типографику, удобные пользовательские сценарии и визуальную целостность.',
+      'Основной фокус был на ясной структуре интерфейса и улучшении пользовательского пути от первого экрана до целевого действия.',
     ],
   },
   {
-    category: 'Branding',
+    category: 'Брендинг',
     title: 'Aura Dione',
-    project: 'Brand Identity',
+    project: 'Айдентика бренда',
     client: 'ThemeForest',
     languages: 'Illustrator, Photoshop',
     preview: 'www.themeforest.net',
     description: [
-      'A complete branding package focused on modern visual language and reusable design patterns for digital and print products.',
-      'The project combines typography, icon systems, and product storytelling for consistent customer perception across channels.',
+      'Комплексная визуальная система бренда с единым языком графики для цифровых и печатных носителей.',
+      'Проект объединяет типографику, иконографику и коммуникацию бренда для цельного восприятия во всех каналах.',
     ],
   },
   {
-    category: 'Web App',
+    category: 'Веб-приложение',
     title: 'T-Shirt Mockup',
-    project: 'Dashboard App',
+    project: 'Панель управления',
     client: 'Creative Studio',
     languages: 'Vue, TypeScript, SCSS',
     preview: 'www.creative-studio.com',
     description: [
-      'This web app demonstrates a modular design system with highly reusable components and rapid iteration workflows.',
-      'Special attention was given to responsive behavior, hierarchy of content, and interaction feedback during user actions.',
+      'Веб-приложение с модульным подходом, переиспользуемыми компонентами и быстрым циклом разработки.',
+      'Особое внимание уделено адаптивности, визуальной иерархии и корректной обратной связи в интеракциях.',
     ],
   },
   {
-    category: 'Photography',
+    category: 'Фотография',
     title: 'Modern Balloon',
-    project: 'Photography Set',
+    project: 'Фотосерия',
     client: 'Behance',
     languages: 'Lightroom, Photoshop',
     preview: 'www.behance.net',
     description: [
-      'A visual exploration around color, shape and movement with post-production workflow optimized for social media.',
-      'The set was crafted to preserve cinematic mood and maintain clear style consistency across all publications.',
+      'Визуальный проект о цвете, форме и движении с постобработкой, оптимизированной для digital-публикаций.',
+      'Серия выполнена с упором на атмосферу и единый стиль во всех материалах.',
     ],
   },
 ];
-
-export const blogs: BlogItem[] = [
-  {
-    date: '18 Apr, 2024',
-    category: 'Design',
-    title: 'How to Make Better UI Decisions in Complex Products',
-  },
-  {
-    date: '02 Apr, 2024',
-    category: 'Productivity',
-    title: 'Top 7 Habits of Productive Designers Working Remote',
-  },
-  {
-    date: '20 Mar, 2024',
-    category: 'Career',
-    title: 'Building a Personal Brand as a UI/UX Professional',
-  },
-];
-
-export const footerText = '© 2024 All Rights Reserved by elite-themes24.';

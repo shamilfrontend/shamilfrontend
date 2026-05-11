@@ -6,13 +6,13 @@ import { educationItems, experienceItems, skills } from '../data/profile';
 <template>
   <ContentShell>
     <section class="page-head">
-      <h2>Resume</h2>
+      <h2>Резюме</h2>
       <span class="page-head__line" />
     </section>
 
     <div class="resume-grid">
       <section>
-        <h3 class="section-title">Education</h3>
+        <h3 class="section-title">Образование</h3>
         <article
           v-for="item in educationItems"
           :key="item.title"
@@ -25,7 +25,7 @@ import { educationItems, experienceItems, skills } from '../data/profile';
       </section>
 
       <section>
-        <h3 class="section-title">Experience</h3>
+        <h3 class="section-title">Опыт</h3>
         <article
           v-for="item in experienceItems"
           :key="item.title"
@@ -38,19 +38,59 @@ import { educationItems, experienceItems, skills } from '../data/profile';
       </section>
     </div>
 
-    <section>
-      <h3 class="section-title">Working Skills</h3>
-      <div class="skills-grid">
-        <article v-for="skill in skills" :key="skill.title" class="skill-row">
-          <div class="skill-row__head">
+    <div class="skills-block">
+      <section>
+        <h3 class="section-title">Ключевые навыки</h3>
+        <div class="skills-block__content">
+          <article v-for="skill in skills" :key="skill.title" class="skill-chip">
             <span>{{ skill.title }}</span>
-            <span>{{ skill.level }}%</span>
-          </div>
-          <div class="skill-row__bar">
-            <span :style="{ width: `${skill.level}%` }" />
-          </div>
-        </article>
-      </div>
-    </section>
+            <span class="skill-chip__arrow">›</span>
+          </article>
+        </div>
+      </section>
+    </div>
   </ContentShell>
 </template>
+
+<style scoped lang="scss">
+.skills-block {
+  padding: 0 34px 26px;
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 42px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: #e8edf2;
+  color: #27313d;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.skill-chip__arrow {
+  color: #51667f;
+}
+
+@media (max-width: 1024px) {
+  .skills-block {
+    padding: 0 18px 20px;
+  }
+
+  .skill-chip {
+    font-size: 14px;
+    min-height: 34px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    gap: 8px;
+  }
+}
+</style>

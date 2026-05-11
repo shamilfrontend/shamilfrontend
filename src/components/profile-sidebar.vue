@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import AppIcon from './app-icon.vue';
-import heroImage from '../assets/hero.png';
+import authorImage from '../assets/shamil.jpg';
 import { contactItems, profileInfo, socialLinks } from '../data/profile';
 </script>
 
@@ -9,7 +9,7 @@ import { contactItems, profileInfo, socialLinks } from '../data/profile';
     <div class="profile-sidebar__image-wrap">
       <img
         class="profile-sidebar__image"
-        :src="heroImage"
+        :src="authorImage"
         :alt="profileInfo.name"
       />
     </div>
@@ -47,7 +47,7 @@ import { contactItems, profileInfo, socialLinks } from '../data/profile';
 
     <button class="download-button" type="button">
       <AppIcon name="download" />
-      Download CV
+      Скачать резюме
     </button>
   </aside>
 </template>

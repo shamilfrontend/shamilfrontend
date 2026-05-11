@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { footerText } from '../data/profile';
+const currentYear = new Date().getFullYear();
 </script>
 
 <template>
   <footer class="page-footer">
-    {{ footerText }}
+		© {{ currentYear }} Все права не защитить.
   </footer>
 </template>
