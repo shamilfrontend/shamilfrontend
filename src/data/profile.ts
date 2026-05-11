@@ -1,7 +1,6 @@
 export interface SocialLink {
   label: string;
   url: string;
-  short: string;
   icon: string;
 }
 
@@ -32,6 +31,11 @@ export interface SkillItem {
 export interface WorkItem {
   category: string;
   title: string;
+  project: string;
+  client: string;
+  languages: string;
+  preview: string;
+  description: string[];
 }
 
 export interface BlogItem {
@@ -63,25 +67,25 @@ export const profileInfo = {
 };
 
 export const navItems: NavItem[] = [
-  { to: '/about', label: 'About', icon: '👤' },
-  { to: '/resume', label: 'Resume', icon: '📄' },
-  { to: '/works', label: 'Works', icon: '💼' },
-  { to: '/blogs', label: 'Blogs', icon: '📝' },
-  { to: '/contact', label: 'Contact', icon: '✉' },
+  { to: '/about', label: 'About', icon: 'user' },
+  { to: '/resume', label: 'Resume', icon: 'file' },
+  { to: '/works', label: 'Works', icon: 'briefcase' },
+  { to: '/blogs', label: 'Blogs', icon: 'book' },
+  { to: '/contact', label: 'Contact', icon: 'mail' },
 ];
 
 export const socialLinks: SocialLink[] = [
-  { label: 'Facebook', short: 'f', icon: 'f', url: '#' },
-  { label: 'Twitter', short: 't', icon: 't', url: '#' },
-  { label: 'Instagram', short: 'ig', icon: 'ig', url: '#' },
-  { label: 'LinkedIn', short: 'in', icon: 'in', url: '#' },
+  { label: 'Facebook', icon: 'facebook', url: '#' },
+  { label: 'Twitter', icon: 'twitter', url: '#' },
+  { label: 'Instagram', icon: 'instagram', url: '#' },
+  { label: 'LinkedIn', icon: 'linkedin', url: '#' },
 ];
 
 export const contactItems: ContactItem[] = [
-  { label: 'Phone', value: profileInfo.phone, icon: '📞' },
-  { label: 'Email', value: profileInfo.email, icon: '✉' },
-  { label: 'Location', value: profileInfo.location, icon: '📍' },
-  { label: 'Birthday', value: profileInfo.birthday, icon: '📅' },
+  { label: 'Phone', value: profileInfo.phone, icon: 'phone' },
+  { label: 'Email', value: profileInfo.email, icon: 'mail' },
+  { label: 'Location', value: profileInfo.location, icon: 'pin' },
+  { label: 'Birthday', value: profileInfo.birthday, icon: 'calendar' },
 ];
 
 export const services: ServiceItem[] = [
@@ -90,28 +94,28 @@ export const services: ServiceItem[] = [
     description:
       'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod tincidunt volutpat.',
     tone: 'pink',
-    icon: '✎',
+    icon: 'palette',
   },
   {
     title: 'App Development',
     description:
       'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod tincidunt volutpat.',
     tone: 'blue',
-    icon: '⌘',
+    icon: 'code',
   },
   {
     title: 'Photography',
     description:
       'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod tincidunt volutpat.',
     tone: 'blue',
-    icon: '◉',
+    icon: 'camera',
   },
   {
     title: 'Web Development',
     description:
       'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam euismod tincidunt volutpat.',
     tone: 'pink',
-    icon: '</>',
+    icon: 'code',
   },
 ];
 
@@ -133,10 +137,54 @@ export const skills: SkillItem[] = [
 ];
 
 export const works: WorkItem[] = [
-  { category: 'UI/UX', title: 'Bostami Product Dashboard' },
-  { category: 'Branding', title: 'Cheryl Clothing Campaign' },
-  { category: 'Web App', title: 'Creative Portfolio Website' },
-  { category: 'Photography', title: 'Urban Story Album' },
+  {
+    category: 'UI/UX',
+    title: 'Chul Urina',
+    project: 'Website',
+    client: 'Envato',
+    languages: 'Photoshop, Figma',
+    preview: 'www.envato.com',
+    description: [
+      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga consequatur delectus porro sapiente molestias, magni quasi sed, enim corporis omnis doloremque soluta inventore dolorum consequr quo obcaecati rerum sit non.',
+      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga consequatur delectus porro sapiente molestias, magni quasi sed, enim corporis omnis doloremque soluta inventore dolorum consequr quo obcaecati rerum sit non.',
+    ],
+  },
+  {
+    category: 'Branding',
+    title: 'Aura Dione',
+    project: 'Brand Identity',
+    client: 'ThemeForest',
+    languages: 'Illustrator, Photoshop',
+    preview: 'www.themeforest.net',
+    description: [
+      'A complete branding package focused on modern visual language and reusable design patterns for digital and print products.',
+      'The project combines typography, icon systems, and product storytelling for consistent customer perception across channels.',
+    ],
+  },
+  {
+    category: 'Web App',
+    title: 'T-Shirt Mockup',
+    project: 'Dashboard App',
+    client: 'Creative Studio',
+    languages: 'Vue, TypeScript, SCSS',
+    preview: 'www.creative-studio.com',
+    description: [
+      'This web app demonstrates a modular design system with highly reusable components and rapid iteration workflows.',
+      'Special attention was given to responsive behavior, hierarchy of content, and interaction feedback during user actions.',
+    ],
+  },
+  {
+    category: 'Photography',
+    title: 'Modern Balloon',
+    project: 'Photography Set',
+    client: 'Behance',
+    languages: 'Lightroom, Photoshop',
+    preview: 'www.behance.net',
+    description: [
+      'A visual exploration around color, shape and movement with post-production workflow optimized for social media.',
+      'The set was crafted to preserve cinematic mood and maintain clear style consistency across all publications.',
+    ],
+  },
 ];
 
 export const blogs: BlogItem[] = [

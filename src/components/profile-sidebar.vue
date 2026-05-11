@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AppIcon from './app-icon.vue';
 import heroImage from '../assets/hero.png';
 import { contactItems, profileInfo, socialLinks } from '../data/profile';
 </script>
@@ -24,7 +25,7 @@ import { contactItems, profileInfo, socialLinks } from '../data/profile';
         :aria-label="social.label"
         :href="social.url"
       >
-        {{ social.short }}
+        <AppIcon :name="social.icon" />
       </a>
     </div>
 
@@ -36,7 +37,7 @@ import { contactItems, profileInfo, socialLinks } from '../data/profile';
       >
         <p class="profile-sidebar__contact-label">
           <span class="profile-sidebar__contact-icon" aria-hidden="true">
-            {{ item.icon }}
+            <AppIcon :name="item.icon" />
           </span>
           {{ item.label }}
         </p>
@@ -44,6 +45,9 @@ import { contactItems, profileInfo, socialLinks } from '../data/profile';
       </article>
     </div>
 
-    <button class="download-button" type="button">Download CV</button>
+    <button class="download-button" type="button">
+      <AppIcon name="download" />
+      Download CV
+    </button>
   </aside>
 </template>
