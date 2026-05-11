@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AppIcon from '../components/app-icon.vue';
 import ContentShell from '../components/content-shell.vue';
 import { profileInfo, services } from '../data/profile';
 </script>
@@ -27,7 +28,7 @@ import { profileInfo, services } from '../data/profile';
       >
         <h4>
           <span class="service-card__icon" aria-hidden="true">
-            {{ service.icon }}
+            <AppIcon :name="service.icon" />
           </span>
           {{ service.title }}
         </h4>
