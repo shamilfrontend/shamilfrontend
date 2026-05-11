@@ -7,7 +7,7 @@ import { profileInfo, services } from '../data/profile';
 <template>
   <ContentShell>
     <section class="page-head">
-      <h2>About</h2>
+      <h2>Обо мне</h2>
       <span class="page-head__line" />
     </section>
 
@@ -17,7 +17,7 @@ import { profileInfo, services } from '../data/profile';
       </p>
     </div>
 
-    <h3 class="section-title">What I Do!</h3>
+    <h3 class="section-title">Чем я занимаюсь</h3>
 
     <div class="service-grid">
       <article
@@ -36,9 +36,5 @@ import { profileInfo, services } from '../data/profile';
       </article>
     </div>
 
-    <section class="client-block">
-      <h3>Clinet</h3>
-      <div class="client-logo">Cheryl Clothing</div>
-    </section>
   </ContentShell>
 </template>

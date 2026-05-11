@@ -22,16 +22,6 @@ const router = createRouter({
       name: 'works',
       component: () => import('../views/works-view.vue'),
     },
-    {
-      path: '/blogs',
-      name: 'blogs',
-      component: () => import('../views/blogs-view.vue'),
-    },
-    {
-      path: '/contact',
-      name: 'contact',
-      component: () => import('../views/contact-view.vue'),
-    },
   ],
 });
 

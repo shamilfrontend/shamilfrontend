@@ -37,7 +37,7 @@ watch(activeWork, (value) => {
 <template>
   <ContentShell>
     <section class="page-head">
-      <h2>Works</h2>
+      <h2>Работы</h2>
       <span class="page-head__line" />
     </section>
 
@@ -66,7 +66,7 @@ watch(activeWork, (value) => {
       <button
         type="button"
         class="work-modal__close"
-        aria-label="Close modal"
+        aria-label="Закрыть окно"
         @click="closeWorkModal"
       >
         ×
@@ -77,19 +77,19 @@ watch(activeWork, (value) => {
       <div class="work-modal__meta">
         <p>
           <AppIcon name="file" />
-          <strong>Project :</strong> {{ activeWork.project }}
+          <strong>Проект:</strong> {{ activeWork.project }}
         </p>
         <p>
           <AppIcon name="user" />
-          <strong>Client :</strong> {{ activeWork.client }}
+          <strong>Клиент:</strong> {{ activeWork.client }}
         </p>
         <p>
           <AppIcon name="code" />
-          <strong>Langages :</strong> {{ activeWork.languages }}
+          <strong>Технологии:</strong> {{ activeWork.languages }}
         </p>
         <p>
           <AppIcon name="external" />
-          <strong>Preview :</strong> {{ activeWork.preview }}
+          <strong>Ссылка:</strong> {{ activeWork.preview }}
         </p>
       </div>
 
