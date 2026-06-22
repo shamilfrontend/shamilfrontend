@@ -1,12 +1,20 @@
 <script setup lang="ts">
 import { onBeforeUnmount, ref, watch } from 'vue';
+import { useI18n } from 'vue-i18n';
 import { RouterLink, useRoute } from 'vue-router';
+
 import AppIcon from './components/app-icon.vue';
+import LocaleSwitcher from './components/locale-switcher.vue';
 import PageFooter from './components/page-footer.vue';
 import ProfileSidebar from './components/profile-sidebar.vue';
 import TopNavTabs from './components/top-nav-tabs.vue';
-import { navItems, profileInfo } from './data/profile';
+import { useProfileContent } from './composables/use-profile-content';
+import { useTheme } from './composables/use-theme';
+import { profileInfo } from './data/profile';
 
+const { isDark, toggleTheme } = useTheme();
+const { t } = useI18n();
+const { navItems } = useProfileContent();
 const isMobileMenuOpen = ref(false);
 const route = useRoute();
 
@@ -40,6 +48,7 @@ onBeforeUnmount(() => {
       <header class="app-header">
         <div class="app-header__brand-row">
           <h1 class="app-brand">{{ profileInfo.brand }}</h1>
+
           <button
             type="button"
             class="mobile-menu-trigger"
@@ -54,9 +63,18 @@ onBeforeUnmount(() => {
           </button>
         </div>
 
-        <button class="theme-toggle" type="button">
-          <AppIcon name="moon" />
-        </button>
+        <div class="header-controls">
+          <LocaleSwitcher />
+
+          <button
+            class="theme-toggle"
+            type="button"
+            :aria-label="isDark ? t('theme.toLight') : t('theme.toDark')"
+            @click="toggleTheme"
+          >
+            <AppIcon :name="isDark ? 'sun' : 'moon'" />
+          </button>
+        </div>
       </header>
 
       <Transition name="mobile-menu">

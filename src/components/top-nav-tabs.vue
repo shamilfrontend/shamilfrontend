@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import AppIcon from './app-icon.vue';
 import { RouterLink, useRoute } from 'vue-router';
-import { navItems } from '../data/profile';
+import { useProfileContent } from '../composables/use-profile-content';
 
 const route = useRoute();
+const { navItems } = useProfileContent();
 </script>
 
 <template>

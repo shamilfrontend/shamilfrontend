@@ -1,0 +1,145 @@
+{
+  "nav": {
+    "home": "Главная",
+    "resume": "Резюме",
+    "portfolio": "Портфолио"
+  },
+  "profile": {
+    "name": "Шамиль Алисултанов",
+    "role": "Фронтенд-разработчик",
+    "location": "Россия, Республика Дагестан",
+    "about": [
+      "Я веб-разработчик, который любит превращать сложные задачи в понятные и удобные решения. Работаю с интерфейсами, архитектурой и фронтенд-разработкой.",
+      "Мне важно, чтобы продукт был не только красивым, но и полезным: быстрым, логичным и комфортным для пользователя."
+    ],
+    "contactText": "Я всегда открыт к обсуждению новых проектов и сотрудничества."
+  },
+  "contacts": {
+    "phone": "Телефон",
+    "email": "Почта",
+    "location": "Локация"
+  },
+  "about": {
+    "title": "Обо мне",
+    "servicesTitle": "Чем я занимаюсь"
+  },
+  "resume": {
+    "title": "Резюме",
+    "education": "Образование",
+    "experience": "Опыт",
+    "skills": "Ключевые навыки"
+  },
+  "portfolio": {
+    "title": "Портфолио",
+    "project": "Проект",
+    "client": "Клиент",
+    "technologies": "Технологии",
+    "link": "Ссылка",
+    "close": "Закрыть окно"
+  },
+  "services": [
+    {
+      "title": "Frontend-разработка",
+      "description": "Разрабатываю быстрые и масштабируемые интерфейсы на Vue 3, TypeScript и современном стеке."
+    },
+    {
+      "title": "Разработка приложений",
+      "description": "Создание современных веб-приложений с продуманной архитектурой и высокой производительностью."
+    },
+    {
+      "title": "Backend и API",
+      "description": "Проектирую и реализую серверную часть, API и интеграции для полноценных веб-продуктов."
+    },
+    {
+      "title": "Веб-разработка",
+      "description": "Разработка сайтов и интерфейсов с адаптивностью, чистым кодом и удобной поддержкой."
+    }
+  ],
+  "education": [
+    {
+      "period": "Специалист при МГТУ им. Баумана",
+      "title": "HTML/CSS, JS, React, PHP",
+      "place": "Кроссбраузерная верстка, HTML5/CSS3, основы юзабилити"
+    },
+    {
+      "period": "Дополнительное обучение",
+      "title": "CS50, Udemy, Loftschool, ITVDN",
+      "place": "Docker, Express, NestJS, современный JavaScript и Vue"
+    }
+  ],
+  "experience": [
+    {
+      "period": "2024 - настоящее время",
+      "title": "FrontEnd Lead — Передовые Платежные Решения",
+      "place": "Nuxt 3, Vue 3, TypeScript, SCSS; архитектура, код-ревью, командная работа"
+    },
+    {
+      "period": "2021 - 2024",
+      "title": "Senior Frontend Developer — Газпром ID",
+      "place": "Vue 3, TypeScript, дизайн-системы, продуктовая разработка"
+    },
+    {
+      "period": "2019 - 2022",
+      "title": "Frontend Developer — МТ-Технологии",
+      "place": "Vue 3, TypeScript, дизайн-системы, продуктовая разработка"
+    },
+    {
+      "period": "2018 - 2019",
+      "title": "Frontend Developer — МТ-Интеграция",
+      "place": "Vue 3, TypeScript, дизайн-системы, продуктовая разработка"
+    },
+    {
+      "period": "2016 - 2018",
+      "title": "Frontend Developer — LEOMAX",
+      "place": "Vue 3, TypeScript, дизайн-системы, продуктовая разработка"
+    }
+  ],
+  "skills": [
+    { "title": "HTML" },
+    { "title": "CSS" },
+    { "title": "SCSS" },
+    { "title": "Адаптивная верстка" },
+    { "title": "JavaScript" },
+    { "title": "TypeScript" },
+    { "title": "Vite" },
+    { "title": "Vue.js" },
+    { "title": "Nuxt.js" },
+    { "title": "Node.js" },
+    { "title": "Express.js" },
+    { "title": "REST" },
+    { "title": "MongoDB" },
+    { "title": "Docker" },
+    { "title": "Docker Compose" },
+    { "title": "Git" },
+    { "title": "Figma" },
+    { "title": "PhotoShop" }
+  ],
+  "portfolioItems": [
+    {
+      "category": "Игра",
+      "title": "Игра Flappy Petya",
+      "project": "Браузерная игра",
+      "client": "Личный проект",
+      "description": ["Браузерная игра в стиле Flappy Birds"]
+    }
+  ],
+  "footer": {
+    "rights": "Все права не защитить."
+  },
+  "theme": {
+    "toLight": "Переключить на светлую тему",
+    "toDark": "Переключить на тёмную тему"
+  },
+  "locale": {
+    "group": "Выбор языка",
+    "switchToRu": "Переключить на русский язык",
+    "switchToEn": "Switch to English",
+    "ru": "RU",
+    "en": "EN"
+  },
+  "slider": {
+    "prev": "Предыдущий скриншот",
+    "next": "Следующий скриншот",
+    "screenshot": "Скриншот {n}"
+  }
+}
