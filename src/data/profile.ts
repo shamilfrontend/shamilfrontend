@@ -1,3 +1,8 @@
+import pprCabinetAddCar from '../assets/portfolio/ppr-cabinet/add-car.png';
+import pprCabinetCarDetail from '../assets/portfolio/ppr-cabinet/car-detail.png';
+import pprCabinetCover from '../assets/portfolio/ppr-cabinet/cover.png';
+import pprCabinetDashboard from '../assets/portfolio/ppr-cabinet/dashboard.png';
+import pprCabinetMileageLog from '../assets/portfolio/ppr-cabinet/mileage-log.png';
 import pprCover from '../assets/portfolio/ppr/cover.png';
 import shootoutCover from '../assets/portfolio/shootout/cover.png';
 import shootoutGameplay from '../assets/portfolio/shootout/gameplay.png';
@@ -84,6 +89,18 @@ export const serviceMeta = [
 ];
 
 export const portfolioMeta = [
+  {
+    languages: 'Vue3, TypeScript, Vite, Vitest, SCSS',
+    preview: 'https://online.petrolplus.ru',
+    coverImage: pprCabinetCover,
+    galleryImages: [
+      pprCabinetCover,
+      pprCabinetDashboard,
+      pprCabinetCarDetail,
+      pprCabinetMileageLog,
+      pprCabinetAddCar,
+    ],
+  },
   {
     languages: 'Nuxt, TypeScript, Vue3, Vite, SCSS, Tailwind',
     preview: 'https://www.petrolplus.ru/',
