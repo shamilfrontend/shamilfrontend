@@ -1,3 +1,4 @@
+import pprCover from '../assets/portfolio/ppr/cover.png';
 import shootoutCover from '../assets/portfolio/shootout/cover.png';
 import shootoutGameplay from '../assets/portfolio/shootout/gameplay.png';
 import shootoutShop from '../assets/portfolio/shootout/shop.png';
@@ -83,6 +84,11 @@ export const serviceMeta = [
 ];
 
 export const portfolioMeta = [
+  {
+    languages: 'Nuxt, TypeScript, Vue3, Vite, SCSS, Tailwind',
+    preview: 'https://www.petrolplus.ru/',
+    coverImage: pprCover,
+  },
   {
     languages: 'NodeJS, ExpressJS, WebSockets, TypeScript, Vue3, Vite, SCSS',
     preview: 'http://93.189.228.148/',
