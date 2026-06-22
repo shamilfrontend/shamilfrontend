@@ -67,17 +67,23 @@ watch(isMobileMenuOpen, async (isOpen) => {
   menuFocusBeforeOpen.value = null;
 });
 
-onMounted(() => {
-  unbindMenuFocusTrap = bindFocusTrap(mobileMenuRef, handleMenuKeydown);
+async function revealApp(): Promise<void> {
+  try {
+    await document.fonts.ready;
+  } catch {
+    /* ignore */
+  }
+
+  document.body.classList.add('app-ready');
 
   requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      document.body.classList.add('app-ready');
-      window.setTimeout(() => {
-        document.getElementById('lcp-shell')?.remove();
-      }, 0);
-    });
+    document.getElementById('lcp-shell')?.remove();
   });
+}
+
+onMounted(() => {
+  unbindMenuFocusTrap = bindFocusTrap(mobileMenuRef, handleMenuKeydown);
+  void revealApp();
 });
 
 onBeforeUnmount(() => {
