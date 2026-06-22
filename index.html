@@ -12,9 +12,11 @@
     <link
       rel="preload"
       as="image"
-      href="/images/shamil.webp"
+      href="/images/shamil-178.webp"
       type="image/webp"
       fetchpriority="high"
+      imagesrcset="/images/shamil-164.webp 164w, /images/shamil-178.webp 178w, /images/shamil-356.webp 356w"
+      imagesizes="(min-width: 1025px) 178px, 164px"
     />
     <style>
       *,
@@ -34,38 +36,199 @@
       }
 
       #lcp-shell {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
         pointer-events: none;
-        max-width: 1240px;
-        margin: 0 auto;
-        padding: 12px 14px 0;
+        overflow: auto;
+        background: #f5f5f8;
       }
 
-      #lcp-shell img {
-        display: block;
-        width: 164px;
-        height: 164px;
-        margin: 64px auto 0;
-        border-radius: 16px;
-        object-fit: cover;
+      html[data-theme='dark'] #lcp-shell {
+        background: #12141f;
+      }
+
+      #app:empty {
+        visibility: hidden;
+        min-height: 100vh;
+      }
+
+      body.app-ready #lcp-shell {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .lcp-shell__bg {
+        min-height: 100vh;
+        padding: 12px 14px;
+      }
+
+      .lcp-shell__grid {
+        max-width: 1240px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+        position: relative;
+        min-height: calc(100vh - 24px);
+      }
+
+      .lcp-shell__header-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 40px;
+        margin-bottom: 12px;
+      }
+
+      .lcp-shell__header-brand {
+        width: 140px;
+        height: 20px;
+        border-radius: 6px;
+        background: #d8dce8;
+      }
+
+      html[data-theme='dark'] .lcp-shell__header-brand {
+        background: #2a2e42;
+      }
+
+      .lcp-shell__header-controls {
+        width: 88px;
+        height: 32px;
+        border-radius: 8px;
         background: #e8eaf2;
       }
 
-      html[data-theme='dark'] #lcp-shell img {
+      html[data-theme='dark'] .lcp-shell__header-controls {
         background: #252838;
       }
 
+      .lcp-shell__sidebar {
+        margin-top: 12px;
+        padding: 14px 18px 24px;
+        text-align: center;
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 10px 30px rgba(35, 36, 71, 0.08);
+      }
+
+      html[data-theme='dark'] .lcp-shell__sidebar {
+        background: #1a1d2e;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      }
+
+      .lcp-shell__image-wrap {
+        width: 164px;
+        height: 164px;
+        margin: 0 auto 12px;
+        border-radius: 16px;
+        overflow: hidden;
+        background: #e8eaf2;
+      }
+
+      html[data-theme='dark'] .lcp-shell__image-wrap {
+        background: #252838;
+      }
+
+      .lcp-shell__image-wrap img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .lcp-shell__line {
+        margin: 0 auto;
+        border-radius: 6px;
+        background: #e8eaf2;
+      }
+
+      html[data-theme='dark'] .lcp-shell__line {
+        background: #2a2e42;
+      }
+
+      .lcp-shell__line--title {
+        width: 180px;
+        height: 24px;
+        margin-top: 8px;
+        margin-bottom: 6px;
+      }
+
+      .lcp-shell__line--role {
+        width: 120px;
+        height: 14px;
+      }
+
+      .lcp-shell__main {
+        margin-top: 12px;
+      }
+
+      .lcp-shell__content {
+        min-height: 420px;
+        border-radius: 18px;
+        background: #fff;
+        box-shadow: 0 10px 30px rgba(35, 36, 71, 0.08);
+      }
+
+      html[data-theme='dark'] .lcp-shell__content {
+        background: #1a1d2e;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      }
+
       @media (min-width: 1025px) {
-        #lcp-shell {
-          display: grid;
-          grid-template-columns: 320px minmax(0, 1fr);
-          padding: 26px 24px 0;
+        .lcp-shell__bg {
+          padding: 26px 24px;
         }
 
-        #lcp-shell img {
+        .lcp-shell__grid {
+          grid-template-columns: 320px minmax(0, 1fr);
+          gap: 26px;
+          min-height: calc(100vh - 52px);
+        }
+
+        .lcp-shell__header-bar {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          min-height: 34px;
+          margin-bottom: 0;
+        }
+
+        .lcp-shell__header-brand {
+          width: 200px;
+          height: 34px;
+        }
+
+        .lcp-shell__header-controls {
+          width: 96px;
+          height: 34px;
+        }
+
+        .lcp-shell__sidebar {
           grid-column: 1;
+          margin-top: 138px;
+          padding: 20px 18px 24px;
+        }
+
+        .lcp-shell__image-wrap {
           width: 178px;
           height: 178px;
-          margin: 52px auto 0;
+          margin: -86px auto 14px;
+        }
+
+        .lcp-shell__line--title {
+          width: 200px;
+          height: 28px;
+        }
+
+        .lcp-shell__main {
+          grid-column: 2;
+          margin-top: 72px;
+        }
+
+        .lcp-shell__content {
+          min-height: 480px;
         }
       }
     </style>
@@ -91,14 +254,33 @@
   </head>
   <body>
     <div id="lcp-shell" aria-hidden="true">
-      <img
-        src="/images/shamil.webp"
-        alt="Шамиль Алисултанов"
-        width="164"
-        height="164"
-        fetchpriority="high"
-        decoding="async"
-      />
+      <div class="lcp-shell__bg">
+        <div class="lcp-shell__grid">
+          <div class="lcp-shell__header-bar">
+            <div class="lcp-shell__header-brand"></div>
+            <div class="lcp-shell__header-controls"></div>
+          </div>
+          <aside class="lcp-shell__sidebar">
+            <div class="lcp-shell__image-wrap">
+              <img
+                src="/images/shamil-178.webp"
+                srcset="/images/shamil-164.webp 164w, /images/shamil-178.webp 178w, /images/shamil-356.webp 356w"
+                sizes="(min-width: 1025px) 178px, 164px"
+                alt="Шамиль Алисултанов"
+                width="178"
+                height="178"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </div>
+            <div class="lcp-shell__line lcp-shell__line--title"></div>
+            <div class="lcp-shell__line lcp-shell__line--role"></div>
+          </aside>
+          <div class="lcp-shell__main">
+            <div class="lcp-shell__content"></div>
+          </div>
+        </div>
+      </div>
     </div>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>

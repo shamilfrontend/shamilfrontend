@@ -1,0 +1,25 @@
+# ShamilFrontend
+
+> Портфолио фронтенд-разработчика Шамиля Алисултанова. Vue 3, TypeScript, Nuxt.
+
+## О сайте
+
+Личный сайт с резюме, портфолио проектов и контактами для сотрудничества.
+
+## Страницы
+
+- [Главная](https://shamilfrontend.ru/): обо мне, услуги и контакты
+- [Резюме](https://shamilfrontend.ru/resume): опыт, образование и навыки
+- [Портфолио](https://shamilfrontend.ru/portfolio): проекты и кейсы
+
+## Контакты
+
+- [Telegram](https://t.me/shamilfrontend)
+- [GitHub](https://github.com/shamilfrontend)
+- [VK](https://vk.com/shamilfrontend)
+- Email: shoma.alisultanov@yandex.ru
+
+## Дополнительно
+
+- [Sitemap](https://shamilfrontend.ru/sitemap.xml)
+- [Robots](https://shamilfrontend.ru/robots.txt)

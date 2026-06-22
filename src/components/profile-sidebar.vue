@@ -4,6 +4,10 @@ import { useProfileContent } from '../composables/use-profile-content';
 import { socialLinks } from '../data/profile';
 
 const { contactItems, profileInfo: localizedProfile } = useProfileContent();
+
+const profileImageSrcset =
+  '/images/shamil-164.webp 164w, /images/shamil-178.webp 178w, /images/shamil-356.webp 356w';
+const profileImageSizes = '(min-width: 1025px) 178px, 164px';
 </script>
 
 <template>
@@ -11,7 +15,9 @@ const { contactItems, profileInfo: localizedProfile } = useProfileContent();
     <div class="profile-sidebar__image-wrap">
       <img
         class="profile-sidebar__image"
-        src="/images/shamil.webp"
+        src="/images/shamil-178.webp"
+        :srcset="profileImageSrcset"
+        :sizes="profileImageSizes"
         :alt="localizedProfile.name"
         width="178"
         height="178"

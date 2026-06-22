@@ -9,6 +9,7 @@
   --text-subtle: #9aa1bc;
   --text-footer: #687190;
   --text-contact: #33385c;
+  --text-sidebar-secondary: #4f5878;
   --text-modal: #4f587d;
   --text-icon: #636b8c;
   --text-social: #646b8c;
@@ -104,6 +105,7 @@
   --text-subtle: #6e7694;
   --text-footer: #8b93b0;
   --text-contact: #c8cee8;
+  --text-sidebar-secondary: #b4bbd4;
   --text-modal: #a8b0cc;
   --text-icon: #a0a8c4;
   --text-social: #9aa2be;
@@ -183,6 +185,24 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   background-color: var(--bg-body);
+}
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+a:focus-visible,
+button:focus-visible,
+[role='button']:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  border-radius: 4px;
 }
 
 #app {
@@ -424,7 +444,7 @@ body {
 
 .profile-sidebar__role {
   margin: 0;
-  color: var(--text-muted);
+  color: var(--text-sidebar-secondary);
   font-size: 14px;
 }
 
@@ -433,6 +453,10 @@ body {
   display: flex;
   justify-content: center;
   gap: 10px;
+
+  .social-button {
+    color: var(--text-sidebar-secondary);
+  }
 }
 
 .social-button {
@@ -492,7 +516,7 @@ body {
 .profile-sidebar__contact-label {
   margin: 0 0 2px;
   font-size: 12px;
-  color: var(--text-subtle);
+  color: var(--text-sidebar-secondary);
   display: flex;
   align-items: center;
   gap: 6px;

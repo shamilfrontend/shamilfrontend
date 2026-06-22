@@ -4,7 +4,8 @@
     "resume": "Резюме",
     "portfolio": "Портфолио",
     "openMenu": "Открыть меню",
-    "closeMenu": "Закрыть меню"
+    "closeMenu": "Закрыть меню",
+    "mobileMenu": "Мобильная навигация"
   },
   "meta": {
     "defaultTitle": "Шамиль Алисултанов — Frontend Developer",
@@ -48,7 +49,8 @@
     "technologies": "Технологии",
     "link": "Ссылка",
     "repository": "Репозиторий",
-    "close": "Закрыть окно"
+    "close": "Закрыть окно",
+    "openProject": "Открыть проект: {title}"
   },
   "services": [
     {
