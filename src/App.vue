@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, ref, watch } from 'vue';
+import { nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { RouterLink, useRoute } from 'vue-router';
 
@@ -8,6 +8,12 @@ import LocaleSwitcher from './components/locale-switcher.vue';
 import PageFooter from './components/page-footer.vue';
 import ProfileSidebar from './components/profile-sidebar.vue';
 import TopNavTabs from './components/top-nav-tabs.vue';
+import {
+  bindFocusTrap,
+  getFocusableElements,
+  rememberFocus,
+  restoreFocus,
+} from './composables/use-focus-trap';
 import { usePageMeta } from './composables/use-page-meta';
 import { useProfileContent } from './composables/use-profile-content';
 import { useTheme } from './composables/use-theme';
@@ -20,6 +26,10 @@ const { t } = useI18n();
 const { navItems } = useProfileContent();
 const isMobileMenuOpen = ref(false);
 const route = useRoute();
+const menuTriggerRef = ref<HTMLButtonElement | null>(null);
+const mobileMenuRef = ref<HTMLElement | null>(null);
+const menuFocusBeforeOpen = ref<HTMLElement | null>(null);
+let unbindMenuFocusTrap: (() => void) | null = null;
 
 function toggleMobileMenu(): void {
   isMobileMenuOpen.value = !isMobileMenuOpen.value;
@@ -29,6 +39,12 @@ function closeMobileMenu(): void {
   isMobileMenuOpen.value = false;
 }
 
+function handleMenuKeydown(event: KeyboardEvent): void {
+  if (event.key === 'Escape' && isMobileMenuOpen.value) {
+    closeMobileMenu();
+  }
+}
+
 watch(
   () => route.path,
   () => {
@@ -36,15 +52,36 @@ watch(
   },
 );
 
-watch(isMobileMenuOpen, (isOpen) => {
+watch(isMobileMenuOpen, async (isOpen) => {
   document.body.style.overflow = isOpen ? 'hidden' : '';
+
+  if (isOpen) {
+    menuFocusBeforeOpen.value = rememberFocus();
+    await nextTick();
+    const [firstLink] = getFocusableElements(mobileMenuRef.value!);
+    firstLink?.focus();
+    return;
+  }
+
+  await restoreFocus(menuFocusBeforeOpen.value ?? menuTriggerRef.value);
+  menuFocusBeforeOpen.value = null;
 });
 
 onMounted(() => {
-  document.getElementById('lcp-shell')?.remove();
+  unbindMenuFocusTrap = bindFocusTrap(mobileMenuRef, handleMenuKeydown);
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      document.body.classList.add('app-ready');
+      window.setTimeout(() => {
+        document.getElementById('lcp-shell')?.remove();
+      }, 0);
+    });
+  });
 });
 
 onBeforeUnmount(() => {
+  unbindMenuFocusTrap?.();
   document.body.style.overflow = '';
 });
 </script>
@@ -57,6 +94,7 @@ onBeforeUnmount(() => {
           <p class="app-brand">{{ profileInfo.brand }}</p>
 
           <button
+            ref="menuTriggerRef"
             type="button"
             class="mobile-menu-trigger"
             :aria-label="isMobileMenuOpen ? t('nav.closeMenu') : t('nav.openMenu')"
@@ -88,7 +126,13 @@ onBeforeUnmount(() => {
       </header>
 
       <Transition name="mobile-menu">
-        <nav v-if="isMobileMenuOpen" id="mobile-menu-panel" class="mobile-menu-panel">
+        <nav
+          v-if="isMobileMenuOpen"
+          id="mobile-menu-panel"
+          ref="mobileMenuRef"
+          class="mobile-menu-panel"
+          :aria-label="t('nav.mobileMenu')"
+        >
           <RouterLink
             v-for="item in navItems"
             :key="item.to"
@@ -103,13 +147,13 @@ onBeforeUnmount(() => {
 
       <ProfileSidebar />
 
-      <div class="app-main">
+      <main class="app-main">
         <TopNavTabs />
         <div class="content-stack">
           <RouterView />
           <PageFooter />
         </div>
-      </div>
+      </main>
     </div>
   </div>
 </template>
