@@ -817,6 +817,10 @@ body {
   }
 }
 
+.portfolio-card__image--placeholder {
+  background: var(--bg-image-placeholder);
+}
+
 .portfolio-card__category,
 .blog-card__meta {
   margin-bottom: 8px;

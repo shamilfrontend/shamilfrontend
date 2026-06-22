@@ -53,8 +53,11 @@ watch(activePortfolioItem, (value) => {
         class="portfolio-card portfolio-card--clickable"
         @click="openPortfolioModal(item)"
       >
-        <div class="portfolio-card__image">
-          <img :src="item.coverImage" :alt="item.title" />
+        <div
+          class="portfolio-card__image"
+          :class="{ 'portfolio-card__image--placeholder': !item.coverImage }"
+        >
+          <img v-if="item.coverImage" :src="item.coverImage" :alt="item.title" />
         </div>
         <p class="portfolio-card__category">{{ item.category }}</p>
         <h3>{{ item.title }}</h3>
@@ -107,6 +110,19 @@ watch(activePortfolioItem, (value) => {
             {{ activePortfolioItem.preview }}
           </a>
         </p>
+        <p v-if="activePortfolioItem.repositoryUrl">
+          <AppIcon name="github" />
+          <strong>{{ t('portfolio.repository') }}:</strong>
+          <a
+            :href="activePortfolioItem.repositoryUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="portfolio-modal__link"
+            @click.stop
+          >
+            {{ activePortfolioItem.repositoryUrl }}
+          </a>
+        </p>
       </div>
 
       <div class="portfolio-modal__text">
@@ -119,6 +135,7 @@ watch(activePortfolioItem, (value) => {
       </div>
 
       <PortfolioSlider
+        v-if="activePortfolioItem.galleryImages?.length"
         :images="activePortfolioItem.galleryImages"
         :alt="activePortfolioItem.title"
       />

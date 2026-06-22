@@ -35,6 +35,7 @@
     "client": "Client",
     "technologies": "Technologies",
     "link": "Link",
+    "repository": "Repository",
     "close": "Close window"
   },
   "services": [
@@ -130,6 +131,13 @@
       "project": "Browser Game",
       "client": "Personal Project",
       "description": ["A browser game in the style of Flappy Birds"]
+    },
+    {
+      "category": "Open Source",
+      "title": "Design System",
+      "project": "Vue 3 component design system",
+      "client": "Personal project",
+      "description": ["Vue 3 component design system"]
     }
   ],
   "footer": {

@@ -46,8 +46,9 @@ export interface PortfolioItem {
   languages: string;
   preview: string;
   description: string[];
-  coverImage: string;
-  galleryImages: string[];
+  coverImage?: string;
+  galleryImages?: string[];
+  repositoryUrl?: string;
 }
 
 export interface NavItem {
@@ -100,5 +101,10 @@ export const portfolioMeta = [
       settingsImage,
       menuMobileImage,
     ],
+  },
+  {
+    languages: 'NodeJS, TypeScript, Vue3, Vite, SCSS, Storybook, Vitest',
+    preview: 'https://shamilfrontend.github.io/design-system/',
+    repositoryUrl: 'https://github.com/shamilfrontend/design-system',
   },
 ];

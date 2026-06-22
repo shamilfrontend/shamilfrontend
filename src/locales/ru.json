@@ -35,6 +35,7 @@
     "client": "Клиент",
     "technologies": "Технологии",
     "link": "Ссылка",
+    "repository": "Репозиторий",
     "close": "Закрыть окно"
   },
   "services": [
@@ -130,6 +131,13 @@
       "project": "Браузерная игра",
       "client": "Личный проект",
       "description": ["Браузерная игра в стиле Flappy Birds"]
+    },
+    {
+      "category": "Open Source",
+      "title": "Дизайн система",
+      "project": "Дизайн система компонентов Vue 3",
+      "client": "Личный проект",
+      "description": ["Дизайн система компонентов Vue 3"]
     }
   ],
   "footer": {
