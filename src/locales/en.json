@@ -39,7 +39,7 @@
   "resume": {
     "title": "Resume",
     "education": "Education",
-    "experience": "Experience",
+    "experience": "Work Experience",
     "skills": "Key Skills"
   },
   "portfolio": {
@@ -72,14 +72,69 @@
   ],
   "education": [
     {
-      "period": "Specialist at Bauman Moscow State Technical University",
-      "title": "HTML/CSS, JS, React, PHP",
-      "place": "Cross-browser layout, HTML5/CSS3, usability fundamentals"
+      "period": "2024",
+      "title": "Vue.js with TypeScript",
+      "place": "Dmitry Lavrik"
     },
     {
-      "period": "Additional Training",
-      "title": "CS50, Udemy, Loftschool, ITVDN",
-      "place": "Docker, Express, NestJS, modern JavaScript and Vue"
+      "period": "2021",
+      "title": "Vue.js, Level 2",
+      "place": "Dmitry Lavrik"
+    },
+    {
+      "period": "2019",
+      "title": "Vue.js, Basic Course",
+      "place": "Dmitry Lavrik"
+    },
+    {
+      "period": "2018",
+      "title": "Comprehensive JavaScript Training",
+      "place": "Loftschool"
+    },
+    {
+      "period": "2016",
+      "title": "JavaScript Level 5. Server-Side Programming with Node.js",
+      "place": "Specialist at Bauman Moscow State Technical University"
+    },
+    {
+      "period": "2015",
+      "title": "HTML and CSS Level 3. Advanced Layout Methodologies and Tools",
+      "place": "Specialist at Bauman Moscow State Technical University"
+    },
+    {
+      "period": "2014",
+      "title": "JavaScript Level 2. Advanced Features",
+      "place": "Specialist at Bauman Moscow State Technical University"
+    },
+    {
+      "period": "2014",
+      "title": "JavaScript Level 1. JavaScript Fundamentals",
+      "place": "Specialist at Bauman Moscow State Technical University"
+    },
+    {
+      "period": "2014",
+      "title": "Mobile Website Layout Practice",
+      "place": "WebForMySelf.com"
+    },
+    {
+      "period": "2013",
+      "title": "Fluid Layout Practice",
+      "place": "WebForMySelf.com"
+    },
+    {
+      "period": "2013",
+      "title": "HTML and CSS Level 2. Cross-Browser Layout, Usability Fundamentals, HTML5 and CSS3",
+      "place": "Specialist at Bauman Moscow State Technical University"
+    },
+    {
+      "period": "2012",
+      "title": "PHP Level 2. Web Development with MySQL",
+      "place": "Specialist at Bauman Moscow State Technical University"
+    },
+    {
+      "period": "2011",
+      "title": "PHP Level 1. Website Development Fundamentals",
+      "place": "Specialist at Bauman Moscow State Technical University"
     }
   ],
   "experience": [
