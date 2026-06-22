@@ -117,6 +117,15 @@
   "portfolioItems": [
     {
       "category": "Игра",
+      "title": "Игра ShootOut",
+      "project": "Мультиплеерная браузерная игра",
+      "client": "Личный проект",
+      "description": [
+        "Мультиплеерная браузерная игра в стиле Counter Strike в 2D (вид сверху)"
+      ]
+    },
+    {
+      "category": "Игра",
       "title": "Игра Flappy Petya",
       "project": "Браузерная игра",
       "client": "Личный проект",

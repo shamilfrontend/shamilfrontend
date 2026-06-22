@@ -117,6 +117,15 @@
   "portfolioItems": [
     {
       "category": "Game",
+      "title": "ShootOut Game",
+      "project": "Multiplayer browser game",
+      "client": "Personal project",
+      "description": [
+        "Multiplayer browser game in Counter-Strike style, 2D top-down view"
+      ]
+    },
+    {
+      "category": "Game",
       "title": "Flappy Petya Game",
       "project": "Browser Game",
       "client": "Personal Project",

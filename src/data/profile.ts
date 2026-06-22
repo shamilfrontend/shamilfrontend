@@ -1,3 +1,6 @@
+import shootoutCover from '../assets/portfolio/shootout/cover.png';
+import shootoutGameplay from '../assets/portfolio/shootout/gameplay.png';
+import shootoutShop from '../assets/portfolio/shootout/shop.png';
 import coverImage from '../assets/portfolio/flappy-petya/cover.png';
 import gameOverImage from '../assets/portfolio/flappy-petya/game-over.png';
 import gameplayImage from '../assets/portfolio/flappy-petya/gameplay.png';
@@ -79,6 +82,12 @@ export const serviceMeta = [
 ];
 
 export const portfolioMeta = [
+  {
+    languages: 'NodeJS, ExpressJS, WebSockets, TypeScript, Vue3, Vite, SCSS',
+    preview: 'http://93.189.228.148/',
+    coverImage: shootoutCover,
+    galleryImages: [shootoutCover, shootoutGameplay, shootoutShop],
+  },
   {
     languages: 'JavaScript, HTML5 Canvas',
     preview: 'https://shamilfrontend.github.io/flappy-petya/',
