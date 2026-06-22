@@ -2,7 +2,19 @@
   "nav": {
     "home": "Home",
     "resume": "Resume",
-    "portfolio": "Portfolio"
+    "portfolio": "Portfolio",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "meta": {
+    "defaultTitle": "Shamil Alisultanov — Frontend Developer",
+    "defaultDescription": "Shamil Alisultanov — frontend developer. Vue 3, TypeScript, Nuxt. Portfolio, resume, and contacts.",
+    "homeTitle": "Shamil Alisultanov — About Me",
+    "homeDescription": "Frontend developer with experience in Vue 3, TypeScript, and Nuxt. Services, skills, and contacts.",
+    "resumeTitle": "Shamil Alisultanov — Resume",
+    "resumeDescription": "Work experience, education, and key frontend development skills.",
+    "portfolioTitle": "Shamil Alisultanov — Portfolio",
+    "portfolioDescription": "Projects: web applications, corporate websites, and personal Vue 3 and TypeScript builds."
   },
   "profile": {
     "name": "Shamil Alisultanov",

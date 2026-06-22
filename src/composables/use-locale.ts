@@ -3,6 +3,7 @@ import { useI18n } from 'vue-i18n';
 
 import {
   applyDocumentLocale,
+  loadLocaleMessages,
   LOCALE_STORAGE_KEY,
   type AppLocale,
   SUPPORTED_LOCALES,
@@ -13,15 +14,16 @@ export function useLocale() {
 
   const currentLocale = computed(() => locale.value as AppLocale);
 
-  function setLocale(nextLocale: AppLocale): void {
+  async function setLocale(nextLocale: AppLocale): Promise<void> {
+    await loadLocaleMessages(nextLocale);
     locale.value = nextLocale;
     localStorage.setItem(LOCALE_STORAGE_KEY, nextLocale);
     applyDocumentLocale(nextLocale);
   }
 
-  function toggleLocale(): void {
+  async function toggleLocale(): Promise<void> {
     const nextLocale: AppLocale = currentLocale.value === 'ru' ? 'en' : 'ru';
-    setLocale(nextLocale);
+    await setLocale(nextLocale);
   }
 
   return {

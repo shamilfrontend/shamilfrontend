@@ -6,5 +6,12 @@ export default defineConfig({
   plugins: [vue()],
   build: {
     cssMinify: 'esbuild',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vue: ['vue', 'vue-router', 'pinia', 'vue-i18n'],
+        },
+      },
+    },
   },
 })

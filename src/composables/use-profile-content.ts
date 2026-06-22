@@ -3,16 +3,14 @@ import { useI18n } from 'vue-i18n';
 
 import {
   navMeta,
-  portfolioMeta,
   profileInfo,
   serviceMeta,
   type ContactItem,
   type NavItem,
-  type PortfolioItem,
   type ResumeItem,
   type ServiceItem,
   type SkillItem,
-} from '../data/profile';
+} from '../data/profile-core';
 
 interface LocalizedService {
   title: string;
@@ -27,14 +25,6 @@ interface LocalizedResumeItem {
 
 interface LocalizedSkill {
   title: string;
-}
-
-interface LocalizedPortfolioItem {
-  category: string;
-  title: string;
-  project: string;
-  client: string;
-  description: string[];
 }
 
 export function useProfileContent() {
@@ -98,15 +88,6 @@ export function useProfileContent() {
     () => tm('skills') as LocalizedSkill[],
   );
 
-  const portfolioItems = computed<PortfolioItem[]>(() => {
-    const localizedItems = tm('portfolioItems') as LocalizedPortfolioItem[];
-
-    return localizedItems.map((item, index) => ({
-      ...item,
-      ...portfolioMeta[index],
-    }));
-  });
-
   return {
     profileInfo: localizedProfile,
     navItems,
@@ -115,6 +96,5 @@ export function useProfileContent() {
     educationItems,
     experienceItems,
     skills,
-    portfolioItems,
   };
 }

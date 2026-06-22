@@ -2,7 +2,19 @@
   "nav": {
     "home": "Главная",
     "resume": "Резюме",
-    "portfolio": "Портфолио"
+    "portfolio": "Портфолио",
+    "openMenu": "Открыть меню",
+    "closeMenu": "Закрыть меню"
+  },
+  "meta": {
+    "defaultTitle": "Шамиль Алисултанов — Frontend Developer",
+    "defaultDescription": "Шамиль Алисултанов — фронтенд-разработчик. Vue 3, TypeScript, Nuxt. Портфолио, резюме и контакты.",
+    "homeTitle": "Шамиль Алисултанов — Обо мне",
+    "homeDescription": "Фронтенд-разработчик с опытом Vue 3, TypeScript и Nuxt. Услуги, навыки и контакты.",
+    "resumeTitle": "Шамиль Алисултанов — Резюме",
+    "resumeDescription": "Опыт работы, образование и ключевые навыки фронтенд-разработчика.",
+    "portfolioTitle": "Шамиль Алисултанов — Портфолио",
+    "portfolioDescription": "Проекты: веб-приложения, корпоративные сайты и личные разработки на Vue 3 и TypeScript."
   },
   "profile": {
     "name": "Шамиль Алисултанов",
