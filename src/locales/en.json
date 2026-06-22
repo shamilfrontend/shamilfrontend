@@ -117,6 +117,15 @@
   ],
   "portfolioItems": [
     {
+      "category": "Web Application",
+      "title": "PPR Personal Account",
+      "project": "Fleet management personal account",
+      "client": "PPR",
+      "description": [
+        "Personal account for fleet management"
+      ]
+    },
+    {
       "category": "Website",
       "title": "PPR Website",
       "project": "Corporate website",
