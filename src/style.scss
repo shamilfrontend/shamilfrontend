@@ -10,7 +10,6 @@
   --text-subtle: #9aa1bc;
   --text-footer: #687190;
   --text-contact: #33385c;
-  --text-form: #313a62;
   --text-modal: #4f587d;
   --text-icon: #636b8c;
   --text-social: #646b8c;
@@ -19,12 +18,7 @@
   --text-on-accent: #fff;
 
   --accent: #1b74e4;
-  --accent-light: #2f8fff;
   --accent-gradient: linear-gradient(150deg, #2f8fff 0%, #1b74e4 100%);
-  --accent-gradient-btn: linear-gradient(120deg, #2f8fff 0%, #1b74e4 100%);
-  --accent-gradient-bar: linear-gradient(100deg, #2f8fff 0%, #678dff 100%);
-  --accent-shadow: rgba(27, 116, 228, 0.28);
-  --accent-shadow-sm: rgba(27, 116, 228, 0.28);
 
   --bg-body: #f5f5f8;
   --bg-page-gradient-1: rgba(106, 202, 190, 0.16);
@@ -40,7 +34,6 @@
   --bg-card: #ffffff;
   --bg-surface: #f6f8fc;
   --bg-surface-alt: #f7f8fc;
-  --bg-surface-muted: #f7f9fc;
   --bg-surface-card: #f7f9fd;
   --bg-mobile-menu: #f5f5f7;
   --bg-image-placeholder: #d8e8ff;
@@ -48,7 +41,6 @@
   --bg-card-blue: #eff4ff;
   --bg-card-cover: linear-gradient(130deg, #dfebff 0%, #e7f1ff 100%);
   --bg-modal-preview: #f2cf97;
-  --bg-input: #f9fbff;
   --bg-tab: #f6f8fb;
   --bg-contact-icon: #fff;
   --bg-theme-toggle: #fff;
@@ -64,7 +56,6 @@
   --border-tab: #eef2f8;
   --border-tab-hover: #d7e7fb;
   --border-contact: #e8edf6;
-  --border-input: #e2e8f4;
   --border-modal-close-mobile: #e4e9f4;
   --border-modal-close: rgba(255, 255, 255, 0.55);
 
@@ -75,7 +66,6 @@
   --shadow-footer: 0 14px 26px rgba(78, 100, 156, 0.1);
   --shadow-modal: 0 34px 62px rgba(29, 35, 63, 0.35);
   --shadow-slider-nav: 0 4px 14px rgba(29, 35, 63, 0.15);
-  --shadow-btn: 0 10px 20px rgba(27, 116, 228, 0.28);
 
   --modal-backdrop: rgba(16, 20, 53, 0.52);
   --modal-close-bg: rgba(255, 255, 255, 0.18);
@@ -83,6 +73,16 @@
   --text-skill-chip: #27313d;
   --text-skill-chip-arrow: #51667f;
   --text-modal-close-mobile: #8c93ac;
+
+  --social-telegram-color: #26a5e4;
+  --social-telegram-border: #b8e4f8;
+  --social-telegram-bg: #eef8fd;
+  --social-vk-color: #0077ff;
+  --social-vk-border: #b3d4ff;
+  --social-vk-bg: #eef4ff;
+  --social-github-color: #181717;
+  --social-github-border: #d4d4d4;
+  --social-github-bg: #f3f3f3;
 
   font-family: 'Mulish', Inter, system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', sans-serif;
@@ -105,7 +105,6 @@
   --text-subtle: #6e7694;
   --text-footer: #8b93b0;
   --text-contact: #c8cee8;
-  --text-form: #c0c8e4;
   --text-modal: #a8b0cc;
   --text-icon: #a0a8c4;
   --text-social: #9aa2be;
@@ -129,7 +128,6 @@
   --bg-card: #1c1f2e;
   --bg-surface: #222636;
   --bg-surface-alt: #242838;
-  --bg-surface-muted: #1e2232;
   --bg-surface-card: #222636;
   --bg-mobile-menu: #141824;
   --bg-image-placeholder: #2a3550;
@@ -137,7 +135,6 @@
   --bg-card-blue: #1c2840;
   --bg-card-cover: linear-gradient(130deg, #243048 0%, #1e2a40 100%);
   --bg-modal-preview: #3a3020;
-  --bg-input: #1a1e2c;
   --bg-tab: #222636;
   --bg-contact-icon: #2a3044;
   --bg-theme-toggle: #222636;
@@ -153,7 +150,6 @@
   --border-tab: #2e3448;
   --border-tab-hover: #3a4870;
   --border-contact: #2e3448;
-  --border-input: #323848;
   --border-modal-close-mobile: #3a4060;
 
   --shadow-card: 0 18px 40px rgba(0, 0, 0, 0.35);
@@ -167,6 +163,14 @@
   --modal-backdrop: rgba(0, 0, 0, 0.65);
   --modal-close-bg: rgba(34, 38, 54, 0.6);
   --slider-dot: #4a5068;
+
+  --social-telegram-border: rgba(38, 165, 228, 0.35);
+  --social-telegram-bg: rgba(38, 165, 228, 0.14);
+  --social-vk-border: rgba(0, 119, 255, 0.35);
+  --social-vk-bg: rgba(0, 119, 255, 0.14);
+  --social-github-color: #e8ebf5;
+  --social-github-border: rgba(255, 255, 255, 0.2);
+  --social-github-bg: rgba(255, 255, 255, 0.08);
 }
 
 *,
@@ -453,21 +457,21 @@ body {
 }
 
 .social-button--telegram:hover {
-  color: #26a5e4;
-  border-color: #b8e4f8;
-  background: #eef8fd;
+  color: var(--social-telegram-color);
+  border-color: var(--social-telegram-border);
+  background: var(--social-telegram-bg);
 }
 
 .social-button--vk:hover {
-  color: #0077ff;
-  border-color: #b3d4ff;
-  background: #eef4ff;
+  color: var(--social-vk-color);
+  border-color: var(--social-vk-border);
+  background: var(--social-vk-bg);
 }
 
 .social-button--github:hover {
-  color: #181717;
-  border-color: #d4d4d4;
-  background: #f3f3f3;
+  color: var(--social-github-color);
+  border-color: var(--social-github-border);
+  background: var(--social-github-bg);
 }
 
 .profile-sidebar__contacts {
