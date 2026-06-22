@@ -8,9 +8,12 @@ import LocaleSwitcher from './components/locale-switcher.vue';
 import PageFooter from './components/page-footer.vue';
 import ProfileSidebar from './components/profile-sidebar.vue';
 import TopNavTabs from './components/top-nav-tabs.vue';
+import { usePageMeta } from './composables/use-page-meta';
 import { useProfileContent } from './composables/use-profile-content';
 import { useTheme } from './composables/use-theme';
 import { profileInfo } from './data/profile';
+
+usePageMeta();
 
 const { isDark, toggleTheme } = useTheme();
 const { t } = useI18n();
@@ -47,11 +50,14 @@ onBeforeUnmount(() => {
     <div class="app-shell">
       <header class="app-header">
         <div class="app-header__brand-row">
-          <h1 class="app-brand">{{ profileInfo.brand }}</h1>
+          <p class="app-brand">{{ profileInfo.brand }}</p>
 
           <button
             type="button"
             class="mobile-menu-trigger"
+            :aria-label="isMobileMenuOpen ? t('nav.closeMenu') : t('nav.openMenu')"
+            :aria-expanded="isMobileMenuOpen"
+            aria-controls="mobile-menu-panel"
             @click="toggleMobileMenu"
           >
             <span v-if="!isMobileMenuOpen" class="mobile-menu-trigger__icon">

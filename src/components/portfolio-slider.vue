@@ -39,6 +39,10 @@ function getScreenshotLabel(index: number): string {
         :src="images[activeIndex]"
         :alt="getScreenshotLabel(activeIndex)"
         class="portfolio-slider__image"
+        width="774"
+        height="420"
+        :loading="activeIndex === 0 ? 'eager' : 'lazy'"
+        decoding="async"
       />
 
       <button

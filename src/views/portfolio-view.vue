@@ -5,14 +5,15 @@ import { useI18n } from 'vue-i18n';
 import AppIcon from '../components/app-icon.vue';
 import ContentShell from '../components/content-shell.vue';
 import PortfolioSlider from '../components/portfolio-slider.vue';
-import { useProfileContent } from '../composables/use-profile-content';
+import { usePortfolioContent } from '../composables/use-portfolio-content';
+import type { PortfolioItem } from '../data/profile-core';
 
 const { t } = useI18n();
-const { portfolioItems } = useProfileContent();
+const { portfolioItems } = usePortfolioContent();
 
-const activePortfolioItem = ref<(typeof portfolioItems.value)[number] | null>(null);
+const activePortfolioItem = ref<PortfolioItem | null>(null);
 
-function openPortfolioModal(item: (typeof portfolioItems.value)[number]): void {
+function openPortfolioModal(item: PortfolioItem): void {
   activePortfolioItem.value = item;
 }
 
@@ -57,7 +58,15 @@ watch(activePortfolioItem, (value) => {
           class="portfolio-card__image"
           :class="{ 'portfolio-card__image--placeholder': !item.coverImage }"
         >
-          <img v-if="item.coverImage" :src="item.coverImage" :alt="item.title" />
+          <img
+            v-if="item.coverImage"
+            :src="item.coverImage"
+            :alt="item.title"
+            width="400"
+            height="138"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
         <p class="portfolio-card__category">{{ item.category }}</p>
         <h3>{{ item.title }}</h3>

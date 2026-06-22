@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import AppIcon from './app-icon.vue';
-import authorImage from '../assets/shamil.jpg';
 import { useProfileContent } from '../composables/use-profile-content';
 import { socialLinks } from '../data/profile';
 
@@ -12,8 +11,12 @@ const { contactItems, profileInfo: localizedProfile } = useProfileContent();
     <div class="profile-sidebar__image-wrap">
       <img
         class="profile-sidebar__image"
-        :src="authorImage"
+        src="/images/shamil.webp"
         :alt="localizedProfile.name"
+        width="178"
+        height="178"
+        fetchpriority="high"
+        decoding="async"
       />
     </div>
 
