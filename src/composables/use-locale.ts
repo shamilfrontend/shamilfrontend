@@ -1,6 +1,7 @@
 import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 
+import { loadLatinFont } from '../fonts';
 import {
   applyDocumentLocale,
   loadLocaleMessages,
@@ -15,6 +16,10 @@ export function useLocale() {
   const currentLocale = computed(() => locale.value as AppLocale);
 
   async function setLocale(nextLocale: AppLocale): Promise<void> {
+    if (nextLocale === 'en') {
+      await loadLatinFont();
+    }
+
     await loadLocaleMessages(nextLocale);
     locale.value = nextLocale;
     localStorage.setItem(LOCALE_STORAGE_KEY, nextLocale);

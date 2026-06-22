@@ -2,9 +2,9 @@ import { createHead } from '@unhead/vue/client';
 import { createApp } from 'vue';
 
 import App from './App.vue';
+import { loadLatinFont } from './fonts';
 import { i18n, loadLocaleMessages, resolveLocale } from './i18n';
 import router from './router';
-import './fonts';
 import './style.scss';
 
 function bootstrap(): void {
@@ -18,7 +18,7 @@ function bootstrap(): void {
 
   const locale = resolveLocale();
   if (locale === 'en') {
-    void loadLocaleMessages('en');
+    void Promise.all([loadLatinFont(), loadLocaleMessages('en')]);
   }
 }
 
