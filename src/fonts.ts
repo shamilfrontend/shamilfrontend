@@ -1,5 +1,3 @@
-import '@fontsource/mulish/cyrillic-400.css';
-
 let latinFontPromise: Promise<void> | null = null;
 
 export function loadLatinFont(): Promise<void> {

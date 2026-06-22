@@ -29,6 +29,11 @@ function criticalAssetsPlugin(): Plugin {
           (fileName) =>
             fileName.startsWith('assets/index-') && fileName.endsWith('.css'),
         );
+        const fontsCriticalCss = findBundleAsset(
+          ctx.bundle,
+          (fileName) =>
+            fileName.includes('fonts-critical') && fileName.endsWith('.css'),
+        );
         const cyrillicFont = findBundleAsset(
           ctx.bundle,
           (fileName) =>
@@ -36,6 +41,13 @@ function criticalAssetsPlugin(): Plugin {
         );
 
         const headTags: string[] = [];
+
+        if (fontsCriticalCss) {
+          headTags.push(
+            `<link rel="preload" href="/${fontsCriticalCss}" as="style">`,
+            `<link rel="stylesheet" crossorigin href="/${fontsCriticalCss}">`,
+          );
+        }
 
         if (cssFile) {
           headTags.push(
@@ -56,7 +68,10 @@ function criticalAssetsPlugin(): Plugin {
 
         let result = html
           .replace(/<link rel="preload" href="[^"]+" as="style">\n?/g, '')
-          .replace(/<link rel="stylesheet"[^>]*href="[^"]*index-[^"]+\.css"[^>]*>\n?/g, '')
+          .replace(
+            /<link rel="stylesheet"[^>]*href="[^"]*(?:index-|fonts-critical-)[^"]+\.css"[^>]*>\n?/g,
+            '',
+          )
           .replace(
             /<link rel="preload" href="[^"]*mulish-cyrillic[^"]*\.woff2"[^>]*>\n?/g,
             '',
