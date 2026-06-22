@@ -1,5 +1,7 @@
 import { createI18n } from 'vue-i18n';
 
+import ru from '../locales/ru.json';
+
 export const LOCALE_STORAGE_KEY = 'locale';
 
 export const SUPPORTED_LOCALES = ['ru', 'en'] as const;
@@ -8,12 +10,13 @@ export type AppLocale = (typeof SUPPORTED_LOCALES)[number];
 
 export const DEFAULT_LOCALE: AppLocale = 'ru';
 
-const localeLoaders: Record<AppLocale, () => Promise<{ default: Record<string, unknown> }>> = {
-  ru: () => import('../locales/ru.json'),
+const localeLoaders: Partial<
+  Record<AppLocale, () => Promise<{ default: Record<string, unknown> }>>
+> = {
   en: () => import('../locales/en.json'),
 };
 
-const loadedLocales = new Set<AppLocale>();
+const loadedLocales = new Set<AppLocale>(['ru']);
 
 function getStoredLocale(): AppLocale | null {
   const stored = localStorage.getItem(LOCALE_STORAGE_KEY);
@@ -45,8 +48,13 @@ export async function loadLocaleMessages(locale: AppLocale): Promise<void> {
     return;
   }
 
-  const messages = await localeLoaders[locale]();
-  i18n.global.setLocaleMessage(locale, messages.default);
+  const loader = localeLoaders[locale];
+  if (!loader) {
+    return;
+  }
+
+  const messages = await loader();
+  i18n.global.setLocaleMessage(locale, messages.default as typeof ru);
   loadedLocales.add(locale);
 }
 
@@ -58,5 +66,7 @@ export const i18n = createI18n({
   legacy: false,
   locale: initialLocale,
   fallbackLocale: DEFAULT_LOCALE,
-  messages: {},
+  messages: {
+    ru,
+  },
 });
