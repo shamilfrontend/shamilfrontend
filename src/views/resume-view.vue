@@ -86,7 +86,7 @@ const { educationItems, experienceItems, skills } = useProfileContent();
 
 @media (max-width: 1024px) {
   .skills-block {
-    padding: 0 18px 20px;
+    padding: 0 16px 20px;
   }
 
   .skill-chip {
