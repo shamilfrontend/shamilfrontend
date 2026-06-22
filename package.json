@@ -9,8 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/mulish": "^5.2.8",
     "@unhead/vue": "^3.1.4",
-    "pinia": "^3.0.4",
     "vue": "^3.5.34",
     "vue-i18n": "^11.4.6",
     "vue-router": "^5.0.6"
