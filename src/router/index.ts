@@ -5,11 +5,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: '/about',
-    },
-    {
-      path: '/about',
-      name: 'about',
+      name: 'home',
       component: () => import('../views/about-view.vue'),
     },
     {
@@ -18,9 +14,9 @@ const router = createRouter({
       component: () => import('../views/resume-view.vue'),
     },
     {
-      path: '/works',
-      name: 'works',
-      component: () => import('../views/works-view.vue'),
+      path: '/portfolio',
+      name: 'portfolio',
+      component: () => import('../views/portfolio-view.vue'),
     },
   ],
 });

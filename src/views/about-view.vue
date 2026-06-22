@@ -1,13 +1,17 @@
 <script setup lang="ts">
 import AppIcon from '../components/app-icon.vue';
 import ContentShell from '../components/content-shell.vue';
-import { profileInfo, services } from '../data/profile';
+import { useProfileContent } from '../composables/use-profile-content';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
+const { profileInfo, services } = useProfileContent();
 </script>
 
 <template>
   <ContentShell>
     <section class="page-head">
-      <h2>Обо мне</h2>
+      <h2>{{ t('about.title') }}</h2>
       <span class="page-head__line" />
     </section>
 
@@ -17,7 +21,7 @@ import { profileInfo, services } from '../data/profile';
       </p>
     </div>
 
-    <h3 class="section-title">Чем я занимаюсь</h3>
+    <h3 class="section-title">{{ t('about.servicesTitle') }}</h3>
 
     <div class="service-grid">
       <article

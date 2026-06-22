@@ -1,10 +1,29 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>shamilfrontend</title>
+    <script>
+      (function () {
+        var storedTheme = localStorage.getItem('theme');
+        var theme =
+          storedTheme ||
+          (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+
+        var storedLocale = localStorage.getItem('locale');
+        var locale = storedLocale === 'en' ? 'en' : 'ru';
+
+        if (storedLocale !== 'ru' && storedLocale !== 'en') {
+          localStorage.setItem('locale', 'ru');
+        }
+
+        document.documentElement.lang = locale;
+      })();
+    </script>
   </head>
   <body>
     <div id="app"></div>

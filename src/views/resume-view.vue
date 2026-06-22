@@ -1,18 +1,22 @@
 <script setup lang="ts">
 import ContentShell from '../components/content-shell.vue';
-import { educationItems, experienceItems, skills } from '../data/profile';
+import { useProfileContent } from '../composables/use-profile-content';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
+const { educationItems, experienceItems, skills } = useProfileContent();
 </script>
 
 <template>
   <ContentShell>
     <section class="page-head">
-      <h2>Резюме</h2>
+      <h2>{{ t('resume.title') }}</h2>
       <span class="page-head__line" />
     </section>
 
     <div class="resume-grid">
       <section>
-        <h3 class="section-title">Образование</h3>
+        <h3 class="section-title">{{ t('resume.education') }}</h3>
         <article
           v-for="item in educationItems"
           :key="item.title"
@@ -25,7 +29,7 @@ import { educationItems, experienceItems, skills } from '../data/profile';
       </section>
 
       <section>
-        <h3 class="section-title">Опыт</h3>
+        <h3 class="section-title">{{ t('resume.experience') }}</h3>
         <article
           v-for="item in experienceItems"
           :key="item.title"
@@ -40,7 +44,7 @@ import { educationItems, experienceItems, skills } from '../data/profile';
 
     <div class="skills-block">
       <section>
-        <h3 class="section-title">Ключевые навыки</h3>
+        <h3 class="section-title">{{ t('resume.skills') }}</h3>
         <div class="skills-block__content">
           <article v-for="skill in skills" :key="skill.title" class="skill-chip">
             <span>{{ skill.title }}</span>
@@ -70,14 +74,14 @@ import { educationItems, experienceItems, skills } from '../data/profile';
   min-height: 42px;
   padding: 8px 14px;
   border-radius: 10px;
-  background: #e8edf2;
-  color: #27313d;
+  background: var(--bg-skill-chip);
+  color: var(--text-skill-chip);
   font-size: 16px;
   line-height: 1;
 }
 
 .skill-chip__arrow {
-  color: #51667f;
+  color: var(--text-skill-chip-arrow);
 }
 
 @media (max-width: 1024px) {

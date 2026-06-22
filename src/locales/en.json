@@ -1,0 +1,145 @@
+{
+  "nav": {
+    "home": "Home",
+    "resume": "Resume",
+    "portfolio": "Portfolio"
+  },
+  "profile": {
+    "name": "Shamil Alisultanov",
+    "role": "Front-end Developer",
+    "location": "Russia, Republic of Dagestan",
+    "about": [
+      "I'm a web developer who loves turning complex tasks into clear and user-friendly solutions. I work with interfaces, architecture, and frontend development.",
+      "It's important to me that a product is not only beautiful but also useful: fast, logical, and comfortable for the user."
+    ],
+    "contactText": "I'm always open to discussing new projects and collaboration."
+  },
+  "contacts": {
+    "phone": "Phone",
+    "email": "Email",
+    "location": "Location"
+  },
+  "about": {
+    "title": "About Me",
+    "servicesTitle": "What I Do"
+  },
+  "resume": {
+    "title": "Resume",
+    "education": "Education",
+    "experience": "Experience",
+    "skills": "Key Skills"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "project": "Project",
+    "client": "Client",
+    "technologies": "Technologies",
+    "link": "Link",
+    "close": "Close window"
+  },
+  "services": [
+    {
+      "title": "Frontend Development",
+      "description": "I build fast and scalable interfaces with Vue 3, TypeScript, and a modern stack."
+    },
+    {
+      "title": "Application Development",
+      "description": "Creating modern web applications with thoughtful architecture and high performance."
+    },
+    {
+      "title": "Backend & API",
+      "description": "I design and implement server-side logic, APIs, and integrations for full-fledged web products."
+    },
+    {
+      "title": "Web Development",
+      "description": "Building websites and interfaces with responsiveness, clean code, and easy maintenance."
+    }
+  ],
+  "education": [
+    {
+      "period": "Specialist at Bauman Moscow State Technical University",
+      "title": "HTML/CSS, JS, React, PHP",
+      "place": "Cross-browser layout, HTML5/CSS3, usability fundamentals"
+    },
+    {
+      "period": "Additional Training",
+      "title": "CS50, Udemy, Loftschool, ITVDN",
+      "place": "Docker, Express, NestJS, modern JavaScript and Vue"
+    }
+  ],
+  "experience": [
+    {
+      "period": "2024 - Present",
+      "title": "FrontEnd Lead — Advanced Payment Solutions",
+      "place": "Nuxt 3, Vue 3, TypeScript, SCSS; architecture, code review, team collaboration"
+    },
+    {
+      "period": "2021 - 2024",
+      "title": "Senior Frontend Developer — Gazprom ID",
+      "place": "Vue 3, TypeScript, design systems, product development"
+    },
+    {
+      "period": "2019 - 2022",
+      "title": "Frontend Developer — MT-Technologies",
+      "place": "Vue 3, TypeScript, design systems, product development"
+    },
+    {
+      "period": "2018 - 2019",
+      "title": "Frontend Developer — MT-Integration",
+      "place": "Vue 3, TypeScript, design systems, product development"
+    },
+    {
+      "period": "2016 - 2018",
+      "title": "Frontend Developer — LEOMAX",
+      "place": "Vue 3, TypeScript, design systems, product development"
+    }
+  ],
+  "skills": [
+    { "title": "HTML" },
+    { "title": "CSS" },
+    { "title": "SCSS" },
+    { "title": "Responsive Layout" },
+    { "title": "JavaScript" },
+    { "title": "TypeScript" },
+    { "title": "Vite" },
+    { "title": "Vue.js" },
+    { "title": "Nuxt.js" },
+    { "title": "Node.js" },
+    { "title": "Express.js" },
+    { "title": "REST" },
+    { "title": "MongoDB" },
+    { "title": "Docker" },
+    { "title": "Docker Compose" },
+    { "title": "Git" },
+    { "title": "Figma" },
+    { "title": "PhotoShop" }
+  ],
+  "portfolioItems": [
+    {
+      "category": "Game",
+      "title": "Flappy Petya Game",
+      "project": "Browser Game",
+      "client": "Personal Project",
+      "description": ["A browser game in the style of Flappy Birds"]
+    }
+  ],
+  "footer": {
+    "rights": "All rights unreserved."
+  },
+  "theme": {
+    "toLight": "Switch to light theme",
+    "toDark": "Switch to dark theme"
+  },
+  "locale": {
+    "group": "Language selection",
+    "switchToRu": "Переключить на русский язык",
+    "switchToEn": "Switch to English",
+    "ru": "RU",
+    "en": "EN"
+  },
+  "slider": {
+    "prev": "Previous screenshot",
+    "next": "Next screenshot",
+    "screenshot": "Screenshot {n}"
+  }
+}
