@@ -182,6 +182,7 @@
 body {
   margin: 0;
   min-height: 100vh;
+  overflow-x: hidden;
   background-color: var(--bg-body);
 }
 
@@ -519,6 +520,8 @@ body {
   font-size: 14px;
   font-weight: 500;
   color: var(--text-contact);
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .profile-sidebar__contact-link {
@@ -1009,14 +1012,49 @@ body {
 }
 
 @media (max-width: 1024px) {
+  .app-bg {
+    padding: 12px 14px;
+  }
+
   .app-shell {
     grid-template-columns: 1fr;
+    width: 100%;
+    min-width: 0;
   }
 
   .app-header {
     position: static;
-    margin-bottom: 16px;
-    gap: 8px;
+    margin-bottom: 12px;
+    padding: 0;
+    min-height: 40px;
+    gap: 6px;
+  }
+
+  .app-header__brand-row {
+    width: auto;
+    flex: 1;
+    min-width: 0;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .app-brand {
+    font-size: 20px;
+    line-height: 1.1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .mobile-menu-trigger {
+    display: inline-grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    margin-left: auto;
+    font-size: 26px;
   }
 
   .header-controls {
@@ -1024,7 +1062,14 @@ body {
     flex-shrink: 0;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
+  }
+
+  .locale-switcher__button {
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    font-size: 11px;
   }
 
   .theme-toggle {
@@ -1032,43 +1077,13 @@ body {
     flex-shrink: 0;
     display: grid;
     place-items: center;
-  }
-
-  .profile-sidebar {
-    margin-top: 0;
-  }
-
-  .app-main {
-    margin-top: 0;
-  }
-}
-
-@media (max-width: 1024px) {
-  .app-bg {
-    padding: 14px;
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
   }
 
   .top-tabs {
     display: none;
-  }
-
-  .app-header {
-    margin-bottom: 14px;
-    padding-left: 4px;
-    min-height: 40px;
-  }
-
-  .app-brand {
-    font-size: 26px;
-    line-height: 1.1;
-  }
-
-  .mobile-menu-trigger {
-    display: inline-grid;
-    place-items: center;
-    width: 42px;
-    height: 42px;
-    font-size: 28px;
   }
 
   .mobile-menu-panel {
@@ -1095,12 +1110,21 @@ body {
     font-size: 24px;
   }
 
+  .app-main {
+    margin-top: 0;
+    min-width: 0;
+  }
+
   .page-head {
-    padding: 24px 18px 12px;
+    padding: 20px 16px 10px;
   }
 
   .page-head h2 {
-    font-size: 34px;
+    font-size: 30px;
+  }
+
+  .page-head__line {
+    width: 72px;
   }
 
   .about-text,
@@ -1112,8 +1136,8 @@ body {
   .blogs-grid,
   .skills-grid,
   .contact-form {
-    padding-left: 18px;
-    padding-right: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .service-grid,
@@ -1159,6 +1183,6 @@ body {
   }
 
   .client-block {
-    padding: 26px 18px 32px;
+    padding: 24px 16px 28px;
   }
 }
