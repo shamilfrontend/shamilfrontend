@@ -601,6 +601,11 @@ textarea:focus-visible {
   box-shadow: var(--shadow-tab-active);
 }
 
+.top-tabs__item--active:hover {
+  color: var(--text-on-accent);
+  border-color: transparent;
+}
+
 .top-tabs__icon {
   line-height: 1;
   width: 16px;
