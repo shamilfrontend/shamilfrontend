@@ -22,6 +22,7 @@ export interface ResumeItem {
   period: string;
   title: string;
   place: string;
+  description?: string;
 }
 
 export interface SkillItem {

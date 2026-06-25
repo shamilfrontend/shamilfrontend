@@ -38,7 +38,8 @@
   },
   "resume": {
     "title": "Resume",
-    "education": "Education",
+    "higherEducation": "Higher Education",
+    "additionalEducation": "Additional Education",
     "experience": "Work Experience",
     "skills": "Key Skills"
   },
@@ -70,7 +71,15 @@
       "description": "Building websites and interfaces with responsiveness, clean code, and easy maintenance."
     }
   ],
-  "education": [
+  "higherEducation": [
+    {
+      "period": "September 2009 — July 2014 (4 years and 11 months)",
+      "title": "Information Technology and Management",
+      "place": "DSU of National Economy, Makhachkala",
+      "description": "Applied informatics in economics, web programming, frontend development"
+    }
+  ],
+  "additionalEducation": [
     {
       "period": "2024",
       "title": "Vue.js with TypeScript",

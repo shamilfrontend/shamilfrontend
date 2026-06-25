@@ -4,7 +4,8 @@ import { useProfileContent } from '../composables/use-profile-content';
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
-const { educationItems, experienceItems, skills } = useProfileContent();
+const { higherEducationItems, additionalEducationItems, experienceItems, skills } =
+  useProfileContent();
 </script>
 
 <template>
@@ -16,15 +17,30 @@ const { educationItems, experienceItems, skills } = useProfileContent();
 
     <div class="resume-grid">
       <section>
-        <h3 class="section-title">{{ t('resume.education') }}</h3>
+        <h3 class="section-title">{{ t('resume.higherEducation') }}</h3>
         <article
-          v-for="item in educationItems"
+          v-for="item in higherEducationItems"
           :key="item.title"
           class="resume-card resume-card--pink"
         >
           <p class="resume-card__period">{{ item.period }}</p>
           <h4>{{ item.title }}</h4>
           <p>{{ item.place }}</p>
+          <p v-if="item.description">{{ item.description }}</p>
+        </article>
+      </section>
+
+      <section>
+        <h3 class="section-title">{{ t('resume.additionalEducation') }}</h3>
+        <article
+          v-for="item in additionalEducationItems"
+          :key="item.title"
+          class="resume-card resume-card--pink"
+        >
+          <p class="resume-card__period">{{ item.period }}</p>
+          <h4>{{ item.title }}</h4>
+          <p>{{ item.place }}</p>
+          <p v-if="item.description">{{ item.description }}</p>
         </article>
       </section>
 

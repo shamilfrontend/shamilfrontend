@@ -21,6 +21,7 @@ interface LocalizedResumeItem {
   period: string;
   title: string;
   place: string;
+  description?: string;
 }
 
 interface LocalizedSkill {
@@ -76,8 +77,12 @@ export function useProfileContent() {
     }));
   });
 
-  const educationItems = computed<ResumeItem[]>(
-    () => tm('education') as LocalizedResumeItem[],
+  const higherEducationItems = computed<ResumeItem[]>(
+    () => tm('higherEducation') as LocalizedResumeItem[],
+  );
+
+  const additionalEducationItems = computed<ResumeItem[]>(
+    () => tm('additionalEducation') as LocalizedResumeItem[],
   );
 
   const experienceItems = computed<ResumeItem[]>(
@@ -93,7 +98,8 @@ export function useProfileContent() {
     navItems,
     contactItems,
     services,
-    educationItems,
+    higherEducationItems,
+    additionalEducationItems,
     experienceItems,
     skills,
   };
