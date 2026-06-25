@@ -14,6 +14,7 @@ import {
   rememberFocus,
   restoreFocus,
 } from './composables/use-focus-trap';
+import { lockBodyScroll, unlockBodyScroll } from './composables/use-body-scroll-lock';
 import { usePageMeta } from './composables/use-page-meta';
 import { useProfileContent } from './composables/use-profile-content';
 import { useTheme } from './composables/use-theme';
@@ -53,9 +54,8 @@ watch(
 );
 
 watch(isMobileMenuOpen, async (isOpen) => {
-  document.body.style.overflow = isOpen ? 'hidden' : '';
-
   if (isOpen) {
+    lockBodyScroll();
     menuFocusBeforeOpen.value = rememberFocus();
     await nextTick();
     const [firstLink] = getFocusableElements(mobileMenuRef.value!);
@@ -63,6 +63,7 @@ watch(isMobileMenuOpen, async (isOpen) => {
     return;
   }
 
+  unlockBodyScroll();
   await restoreFocus(menuFocusBeforeOpen.value ?? menuTriggerRef.value);
   menuFocusBeforeOpen.value = null;
 });
@@ -88,7 +89,7 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   unbindMenuFocusTrap?.();
-  document.body.style.overflow = '';
+  unlockBodyScroll();
 });
 </script>
 
