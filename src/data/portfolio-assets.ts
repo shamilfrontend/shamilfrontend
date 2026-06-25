@@ -1,3 +1,4 @@
+import designSystemCover from '../assets/portfolio/design-system/cover.svg';
 import pprCabinetAddCar from '../assets/portfolio/ppr-cabinet/add-car.webp';
 import pprCabinetCarDetail from '../assets/portfolio/ppr-cabinet/car-detail.webp';
 import pprCabinetCover from '../assets/portfolio/ppr-cabinet/cover.webp';
@@ -19,6 +20,7 @@ import type { PortfolioMetaItem } from './profile-core';
 
 export const portfolioMeta: PortfolioMetaItem[] = [
   {
+    id: 'ppr-cabinet',
     languages: 'Vue3, TypeScript, Vite, Vitest, SCSS',
     preview: 'https://online.petrolplus.ru',
     coverImage: pprCabinetCover,
@@ -31,17 +33,20 @@ export const portfolioMeta: PortfolioMetaItem[] = [
     ],
   },
   {
+    id: 'ppr-site',
     languages: 'Nuxt, TypeScript, Vue3, Vite, SCSS, Tailwind',
     preview: 'https://www.petrolplus.ru/',
     coverImage: pprCover,
   },
   {
+    id: 'shootout',
     languages: 'NodeJS, ExpressJS, WebSockets, TypeScript, Vue3, Vite, SCSS',
-    preview: 'http://93.189.228.148/',
+    preview: 'https://93.189.228.148/',
     coverImage: shootoutCover,
     galleryImages: [shootoutCover, shootoutGameplay, shootoutShop],
   },
   {
+    id: 'flappy-petya',
     languages: 'JavaScript, HTML5 Canvas',
     preview: 'https://shamilfrontend.github.io/flappy-petya/',
     coverImage,
@@ -55,11 +60,14 @@ export const portfolioMeta: PortfolioMetaItem[] = [
     ],
   },
   {
+    id: 'design-system',
     languages: 'NodeJS, TypeScript, Vue3, Vite, SCSS, Storybook, Vitest',
     preview: 'https://shamilfrontend.github.io/design-system/',
     repositoryUrl: 'https://github.com/shamilfrontend/design-system',
+    coverImage: designSystemCover,
   },
   {
+    id: 'swagger-viewer',
     languages: 'Vue3, TypeScript, Vite, Vitest, SCSS',
     preview: 'https://shamilfrontend.github.io/swagger-viewer/',
     coverImage: swaggerViewerCover,

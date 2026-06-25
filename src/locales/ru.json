@@ -15,7 +15,14 @@
     "resumeTitle": "Шамиль Алисултанов — Резюме",
     "resumeDescription": "Опыт работы, образование и ключевые навыки фронтенд-разработчика.",
     "portfolioTitle": "Шамиль Алисултанов — Портфолио",
-    "portfolioDescription": "Проекты: веб-приложения, корпоративные сайты и личные разработки на Vue 3 и TypeScript."
+    "portfolioDescription": "Проекты: веб-приложения, корпоративные сайты и личные разработки на Vue 3 и TypeScript.",
+    "notFoundTitle": "Шамиль Алисултанов — Страница не найдена",
+    "notFoundDescription": "Запрошенная страница не существует. Вернитесь на главную или выберите раздел в меню."
+  },
+  "notFound": {
+    "title": "Страница не найдена",
+    "message": "Такой страницы нет. Проверьте адрес или вернитесь на главную.",
+    "backHome": "На главную"
   },
   "profile": {
     "name": "Шамиль Алисултанов",
@@ -195,6 +202,7 @@
   ],
   "portfolioItems": [
     {
+      "id": "ppr-cabinet",
       "category": "Веб-приложение",
       "title": "Личный кабинет ППР",
       "project": "Личный кабинет для управления автопарком",
@@ -204,6 +212,7 @@
       ]
     },
     {
+      "id": "ppr-site",
       "category": "Сайт",
       "title": "Сайт ППР",
       "project": "Корпоративный сайт",
@@ -213,6 +222,7 @@
       ]
     },
     {
+      "id": "shootout",
       "category": "Игра",
       "title": "Игра ShootOut",
       "project": "Мультиплеерная браузерная игра",
@@ -222,6 +232,7 @@
       ]
     },
     {
+      "id": "flappy-petya",
       "category": "Игра",
       "title": "Игра Flappy Petya",
       "project": "Браузерная игра",
@@ -229,6 +240,7 @@
       "description": ["Браузерная игра в стиле Flappy Birds"]
     },
     {
+      "id": "design-system",
       "category": "Open Source",
       "title": "Дизайн система",
       "project": "Дизайн система компонентов Vue 3",
@@ -236,11 +248,14 @@
       "description": ["Дизайн система компонентов Vue 3"]
     },
     {
+      "id": "swagger-viewer",
       "category": "Веб-приложение",
       "title": "Swagger Viewer",
       "project": "Инструмент для отображения Swagger файлов",
       "client": "Личный проект",
-      "description": []
+      "description": [
+        "Инструмент для просмотра и навигации по Swagger/OpenAPI спецификациям в браузере"
+      ]
     }
   ],
   "footer": {

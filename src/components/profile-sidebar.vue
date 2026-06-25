@@ -37,6 +37,8 @@ const profileImageSizes = '(min-width: 1025px) 178px, 164px';
         :class="`social-button--${social.icon}`"
         :aria-label="social.label"
         :href="social.url"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <AppIcon :name="social.icon" filled />
       </a>

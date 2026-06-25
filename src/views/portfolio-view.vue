@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue';
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 import AppIcon from '../components/app-icon.vue';
 import ContentShell from '../components/content-shell.vue';
 import PortfolioSlider from '../components/portfolio-slider.vue';
 import {
-  bindFocusTrap,
+  bindFocusTrapWhen,
   rememberFocus,
   restoreFocus,
 } from '../composables/use-focus-trap';
@@ -18,6 +18,7 @@ const { t } = useI18n();
 const { portfolioItems } = usePortfolioContent();
 
 const activePortfolioItem = ref<PortfolioItem | null>(null);
+const isModalOpen = computed(() => activePortfolioItem.value !== null);
 const modalRef = ref<HTMLElement | null>(null);
 const closeButtonRef = ref<HTMLButtonElement | null>(null);
 const previousFocus = ref<HTMLElement | null>(null);
@@ -48,7 +49,7 @@ function handleCardKeydown(event: KeyboardEvent, item: PortfolioItem): void {
 }
 
 onMounted(() => {
-  unbindFocusTrap = bindFocusTrap(modalRef, handleModalKeydown);
+  unbindFocusTrap = bindFocusTrapWhen(isModalOpen, modalRef, handleModalKeydown);
 });
 
 onBeforeUnmount(() => {
@@ -78,7 +79,7 @@ watch(activePortfolioItem, async (value) => {
     <div class="portfolio-grid">
       <article
         v-for="item in portfolioItems"
-        :key="item.title"
+        :key="item.id"
         class="portfolio-card portfolio-card--clickable"
         role="button"
         tabindex="0"
@@ -188,7 +189,10 @@ watch(activePortfolioItem, async (value) => {
         </p>
       </div>
 
-      <div class="portfolio-modal__text">
+      <div
+        v-if="activePortfolioItem.description.length"
+        class="portfolio-modal__text"
+      >
         <p
           v-for="(paragraph, index) in activePortfolioItem.description"
           :key="index"

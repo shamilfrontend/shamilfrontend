@@ -30,6 +30,7 @@ export interface SkillItem {
 }
 
 export interface PortfolioItem {
+  id: string;
   category: string;
   title: string;
   project: string;
@@ -49,6 +50,7 @@ export interface NavItem {
 }
 
 export interface PortfolioMetaItem {
+  id: string;
   languages: string;
   preview: string;
   coverImage?: string;

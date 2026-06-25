@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 138" role="img" aria-label="Design System">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dfeaff" />
+      <stop offset="100%" stop-color="#e7f1ff" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="138" fill="url(#bg)" />
+  <rect x="28" y="24" width="72" height="24" rx="6" fill="#1b74e4" opacity="0.9" />
+  <rect x="28" y="58" width="120" height="12" rx="4" fill="#9aa1bc" />
+  <rect x="28" y="78" width="96" height="12" rx="4" fill="#c5cce0" />
+  <rect x="180" y="24" width="88" height="88" rx="12" fill="#ffffff" stroke="#c5d8ff" stroke-width="2" />
+  <rect x="196" y="40" width="56" height="10" rx="3" fill="#1b74e4" opacity="0.75" />
+  <rect x="196" y="58" width="56" height="10" rx="3" fill="#5f6789" opacity="0.35" />
+  <rect x="196" y="76" width="56" height="10" rx="3" fill="#5f6789" opacity="0.35" />
+  <rect x="196" y="94" width="36" height="10" rx="5" fill="#1b74e4" />
+  <rect x="286" y="24" width="86" height="40" rx="10" fill="#ffffff" stroke="#c5d8ff" stroke-width="2" />
+  <rect x="286" y="72" width="86" height="40" rx="10" fill="#ffffff" stroke="#c5d8ff" stroke-width="2" />
+</svg>

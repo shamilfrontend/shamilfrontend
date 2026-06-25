@@ -32,6 +32,15 @@ const router = createRouter({
         descriptionKey: 'meta.portfolioDescription',
       },
     },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: () => import('../views/not-found-view.vue'),
+      meta: {
+        titleKey: 'meta.notFoundTitle',
+        descriptionKey: 'meta.notFoundDescription',
+      },
+    },
   ],
 });
 

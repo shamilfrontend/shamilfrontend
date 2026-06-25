@@ -15,7 +15,14 @@
     "resumeTitle": "Shamil Alisultanov — Resume",
     "resumeDescription": "Work experience, education, and key frontend development skills.",
     "portfolioTitle": "Shamil Alisultanov — Portfolio",
-    "portfolioDescription": "Projects: web applications, corporate websites, and personal Vue 3 and TypeScript builds."
+    "portfolioDescription": "Projects: web applications, corporate websites, and personal Vue 3 and TypeScript builds.",
+    "notFoundTitle": "Shamil Alisultanov — Page Not Found",
+    "notFoundDescription": "The requested page does not exist. Return to the home page or choose a section from the menu."
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "message": "This page does not exist. Check the address or return to the home page.",
+    "backHome": "Back to Home"
   },
   "profile": {
     "name": "Shamil Alisultanov",
@@ -195,6 +202,7 @@
   ],
   "portfolioItems": [
     {
+      "id": "ppr-cabinet",
       "category": "Web Application",
       "title": "PPR Personal Account",
       "project": "Fleet management personal account",
@@ -204,6 +212,7 @@
       ]
     },
     {
+      "id": "ppr-site",
       "category": "Website",
       "title": "PPR Website",
       "project": "Corporate website",
@@ -213,6 +222,7 @@
       ]
     },
     {
+      "id": "shootout",
       "category": "Game",
       "title": "ShootOut Game",
       "project": "Multiplayer browser game",
@@ -222,6 +232,7 @@
       ]
     },
     {
+      "id": "flappy-petya",
       "category": "Game",
       "title": "Flappy Petya Game",
       "project": "Browser Game",
@@ -229,6 +240,7 @@
       "description": ["A browser game in the style of Flappy Birds"]
     },
     {
+      "id": "design-system",
       "category": "Open Source",
       "title": "Design System",
       "project": "Vue 3 component design system",
@@ -236,11 +248,14 @@
       "description": ["Vue 3 component design system"]
     },
     {
+      "id": "swagger-viewer",
       "category": "Web Application",
       "title": "Swagger Viewer",
       "project": "Tool for displaying Swagger files",
       "client": "Personal project",
-      "description": []
+      "description": [
+        "A browser tool for viewing and navigating Swagger/OpenAPI specifications"
+      ]
     }
   ],
   "footer": {
