@@ -96,9 +96,9 @@ onBeforeUnmount(() => {
   <div class="app-bg">
     <div class="app-shell">
       <header class="app-header">
-        <div class="app-header__brand-row">
-          <p class="app-brand">{{ profileInfo.brand }}</p>
+        <p class="app-brand">{{ profileInfo.brand }}</p>
 
+        <div class="header-controls">
           <button
             ref="menuTriggerRef"
             type="button"
@@ -115,9 +115,7 @@ onBeforeUnmount(() => {
               ×
             </span>
           </button>
-        </div>
 
-        <div class="header-controls">
           <LocaleSwitcher />
 
           <button
