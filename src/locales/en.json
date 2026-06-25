@@ -231,9 +231,7 @@
       "title": "Swagger Viewer",
       "project": "Tool for displaying Swagger files",
       "client": "Personal project",
-      "description": [
-        "Tool for displaying Swagger files"
-      ]
+      "description": []
     }
   ],
   "footer": {

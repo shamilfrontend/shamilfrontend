@@ -128,43 +128,60 @@ watch(activePortfolioItem, async (value) => {
       </h2>
 
       <div class="portfolio-modal__meta">
-        <p>
-          <AppIcon name="file" />
-          <strong>{{ t('portfolio.project') }}:</strong> {{ activePortfolioItem.project }}
+        <p class="portfolio-modal__meta-item">
+          <span class="portfolio-modal__meta-label">
+            <AppIcon name="file" />
+            <strong>{{ t('portfolio.project') }}</strong>
+          </span>
+          <span class="portfolio-modal__meta-value">{{ activePortfolioItem.project }}</span>
         </p>
-        <p>
-          <AppIcon name="user" />
-          <strong>{{ t('portfolio.client') }}:</strong> {{ activePortfolioItem.client }}
+        <p class="portfolio-modal__meta-item">
+          <span class="portfolio-modal__meta-label">
+            <AppIcon name="user" />
+            <strong>{{ t('portfolio.client') }}</strong>
+          </span>
+          <span class="portfolio-modal__meta-value">{{ activePortfolioItem.client }}</span>
         </p>
-        <p>
-          <AppIcon name="code" />
-          <strong>{{ t('portfolio.technologies') }}:</strong> {{ activePortfolioItem.languages }}
+        <p class="portfolio-modal__meta-item">
+          <span class="portfolio-modal__meta-label">
+            <AppIcon name="code" />
+            <strong>{{ t('portfolio.technologies') }}</strong>
+          </span>
+          <span class="portfolio-modal__meta-value">{{ activePortfolioItem.languages }}</span>
         </p>
-        <p>
-          <AppIcon name="external" />
-          <strong>{{ t('portfolio.link') }}:</strong>
-          <a
-            :href="activePortfolioItem.preview"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="portfolio-modal__link"
-            @click.stop
-          >
-            {{ activePortfolioItem.preview }}
-          </a>
+        <p class="portfolio-modal__meta-item">
+          <span class="portfolio-modal__meta-label">
+            <AppIcon name="external" />
+            <strong>{{ t('portfolio.link') }}</strong>
+          </span>
+          <span class="portfolio-modal__meta-value">
+            <a
+              :href="activePortfolioItem.preview"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="portfolio-modal__link"
+              @click.stop
+            >
+              {{ activePortfolioItem.preview }}
+            </a>
+          </span>
         </p>
-        <p v-if="activePortfolioItem.repositoryUrl">
-          <AppIcon name="github" />
-          <strong>{{ t('portfolio.repository') }}:</strong>
-          <a
-            :href="activePortfolioItem.repositoryUrl"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="portfolio-modal__link"
-            @click.stop
-          >
-            {{ activePortfolioItem.repositoryUrl }}
-          </a>
+        <p v-if="activePortfolioItem.repositoryUrl" class="portfolio-modal__meta-item">
+          <span class="portfolio-modal__meta-label">
+            <AppIcon name="github" />
+            <strong>{{ t('portfolio.repository') }}</strong>
+          </span>
+          <span class="portfolio-modal__meta-value">
+            <a
+              :href="activePortfolioItem.repositoryUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="portfolio-modal__link"
+              @click.stop
+            >
+              {{ activePortfolioItem.repositoryUrl }}
+            </a>
+          </span>
         </p>
       </div>
 
