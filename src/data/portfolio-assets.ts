@@ -13,6 +13,7 @@ import gameplayImage from '../assets/portfolio/flappy-petya/gameplay.webp';
 import recordsImage from '../assets/portfolio/flappy-petya/records.webp';
 import settingsImage from '../assets/portfolio/flappy-petya/settings.webp';
 import menuMobileImage from '../assets/portfolio/flappy-petya/menu-mobile.webp';
+import swaggerViewerCover from '../assets/portfolio/swagger-viewer/cover.webp';
 
 import type { PortfolioMetaItem } from './profile-core';
 
@@ -57,5 +58,10 @@ export const portfolioMeta: PortfolioMetaItem[] = [
     languages: 'NodeJS, TypeScript, Vue3, Vite, SCSS, Storybook, Vitest',
     preview: 'https://shamilfrontend.github.io/design-system/',
     repositoryUrl: 'https://github.com/shamilfrontend/design-system',
+  },
+  {
+    languages: 'Vue3, TypeScript, Vite, Vitest, SCSS',
+    preview: 'https://shamilfrontend.github.io/swagger-viewer/',
+    coverImage: swaggerViewerCover,
   },
 ];

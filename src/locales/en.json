@@ -225,6 +225,15 @@
       "project": "Vue 3 component design system",
       "client": "Personal project",
       "description": ["Vue 3 component design system"]
+    },
+    {
+      "category": "Web Application",
+      "title": "Swagger Viewer",
+      "project": "Tool for displaying Swagger files",
+      "client": "Personal project",
+      "description": [
+        "Tool for displaying Swagger files"
+      ]
     }
   ],
   "footer": {
