@@ -17,6 +17,7 @@ function bootstrap(): void {
   app.mount('#app');
 
   const locale = resolveLocale();
+
   if (locale === 'en') {
     void Promise.all([loadLatinFont(), loadLocaleMessages('en')]);
   }

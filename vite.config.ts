@@ -1,5 +1,5 @@
 import type { Plugin } from 'vite';
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 import vue from '@vitejs/plugin-vue';
 
 function findBundleAsset(
@@ -121,5 +121,9 @@ export default defineConfig({
         },
       },
     },
+  },
+  test: {
+    environment: 'jsdom',
+    include: ['src/**/*.test.ts'],
   },
 });

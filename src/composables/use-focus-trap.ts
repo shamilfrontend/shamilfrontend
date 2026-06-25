@@ -60,3 +60,24 @@ export function bindFocusTrap(
     window.removeEventListener('keydown', handler);
   };
 }
+
+export function bindFocusTrapWhen(
+  isActive: Ref<boolean>,
+  containerRef: Ref<HTMLElement | null>,
+  onKeydown: (event: KeyboardEvent) => void,
+): () => void {
+  const handler = (event: KeyboardEvent) => {
+    if (!isActive.value) {
+      return;
+    }
+
+    trapFocus(event, containerRef.value);
+    onKeydown(event);
+  };
+
+  window.addEventListener('keydown', handler);
+
+  return () => {
+    window.removeEventListener('keydown', handler);
+  };
+}

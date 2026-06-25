@@ -2,16 +2,23 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#1b74e4" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
     <meta
       name="description"
+      id="meta-description"
       content="Шамиль Алисултанов — фронтенд-разработчик. Vue 3, TypeScript, Nuxt. Портфолио, резюме и контакты."
     />
-    <title>Шамиль Алисултанов — Frontend Developer</title>
+    <title id="meta-title">Шамиль Алисултанов — Frontend Developer</title>
     <link rel="stylesheet" href="/src/fonts-critical.css" />
     <link
       rel="preload"
@@ -340,6 +347,65 @@
         }
 
         document.documentElement.lang = locale;
+
+        var lcpContent = {
+          ru: {
+            title: 'Шамиль Алисултанов — Frontend Developer',
+            description:
+              'Шамиль Алисултанов — фронтенд-разработчик. Vue 3, TypeScript, Nuxt. Портфолио, резюме и контакты.',
+            name: 'Шамиль Алисултанов',
+            role: 'Фронтенд-разработчик',
+            aboutTitle: 'Обо мне',
+            aboutText:
+              'Я веб-разработчик, который любит превращать сложные задачи в понятные и удобные решения. Работаю с интерфейсами, архитектурой и фронтенд-разработкой.',
+          },
+          en: {
+            title: 'Shamil Alisultanov — Frontend Developer',
+            description:
+              'Shamil Alisultanov — frontend developer. Vue 3, TypeScript, Nuxt. Portfolio, resume, and contacts.',
+            name: 'Shamil Alisultanov',
+            role: 'Front-end Developer',
+            aboutTitle: 'About Me',
+            aboutText:
+              "I'm a web developer who loves turning complex tasks into clear and user-friendly solutions. I work with interfaces, architecture, and frontend development.",
+          },
+        };
+
+        var content = lcpContent[locale];
+        document.title = content.title;
+
+        var metaDescription = document.getElementById('meta-description');
+        if (metaDescription) {
+          metaDescription.setAttribute('content', content.description);
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+          var lcpName = document.getElementById('lcp-shell-name');
+          var lcpRole = document.getElementById('lcp-shell-role');
+          var lcpAboutTitle = document.getElementById('lcp-shell-about-title');
+          var lcpAboutText = document.getElementById('lcp-shell-about-text');
+          var lcpImage = document.getElementById('lcp-shell-image');
+
+          if (lcpName) {
+            lcpName.textContent = content.name;
+          }
+
+          if (lcpRole) {
+            lcpRole.textContent = content.role;
+          }
+
+          if (lcpAboutTitle) {
+            lcpAboutTitle.textContent = content.aboutTitle;
+          }
+
+          if (lcpAboutText) {
+            lcpAboutText.textContent = content.aboutText;
+          }
+
+          if (lcpImage) {
+            lcpImage.setAttribute('alt', content.name);
+          }
+        });
       })();
     </script>
   </head>
@@ -354,6 +420,7 @@
           <aside class="lcp-shell__sidebar">
             <div class="lcp-shell__image-wrap">
               <img
+                id="lcp-shell-image"
                 src="/images/shamil-178.webp"
                 srcset="/images/shamil-164.webp 164w, /images/shamil-178.webp 178w, /images/shamil-356.webp 356w"
                 sizes="(min-width: 1025px) 178px, 164px"
@@ -364,19 +431,19 @@
                 decoding="async"
               />
             </div>
-            <h1 class="lcp-shell__name">Шамиль Алисултанов</h1>
-            <p class="lcp-shell__role">Фронтенд-разработчик</p>
+            <h1 id="lcp-shell-name" class="lcp-shell__name">Шамиль Алисултанов</h1>
+            <p id="lcp-shell-role" class="lcp-shell__role">Фронтенд-разработчик</p>
             <div class="lcp-shell__socials" aria-hidden="true"></div>
             <div class="lcp-shell__contacts" aria-hidden="true"></div>
           </aside>
           <div class="lcp-shell__main">
             <div class="lcp-shell__content">
               <section class="lcp-shell__page-head">
-                <h2>Обо мне</h2>
+                <h2 id="lcp-shell-about-title">Обо мне</h2>
                 <span class="lcp-shell__page-head-line" aria-hidden="true"></span>
               </section>
               <div class="lcp-shell__about-text">
-                <p>
+                <p id="lcp-shell-about-text">
                   Я веб-разработчик, который любит превращать сложные задачи в понятные и
                   удобные решения. Работаю с интерфейсами, архитектурой и
                   фронтенд-разработкой.

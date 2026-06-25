@@ -9,7 +9,7 @@ import PageFooter from './components/page-footer.vue';
 import ProfileSidebar from './components/profile-sidebar.vue';
 import TopNavTabs from './components/top-nav-tabs.vue';
 import {
-  bindFocusTrap,
+  bindFocusTrapWhen,
   getFocusableElements,
   rememberFocus,
   restoreFocus,
@@ -83,7 +83,11 @@ async function revealApp(): Promise<void> {
 }
 
 onMounted(() => {
-  unbindMenuFocusTrap = bindFocusTrap(mobileMenuRef, handleMenuKeydown);
+  unbindMenuFocusTrap = bindFocusTrapWhen(
+    isMobileMenuOpen,
+    mobileMenuRef,
+    handleMenuKeydown,
+  );
   void revealApp();
 });
 
