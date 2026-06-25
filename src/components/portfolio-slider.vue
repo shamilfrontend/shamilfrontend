@@ -39,8 +39,6 @@ function getScreenshotLabel(index: number): string {
         :src="images[activeIndex]"
         :alt="getScreenshotLabel(activeIndex)"
         class="portfolio-slider__image"
-        width="774"
-        height="420"
         :loading="activeIndex === 0 ? 'eager' : 'lazy'"
         decoding="async"
       />
@@ -97,8 +95,8 @@ function getScreenshotLabel(index: number): string {
 
   > .portfolio-slider__viewport > .portfolio-slider__image {
     width: 100%;
+    height: auto;
     max-height: 420px;
-    object-fit: contain;
     display: block;
   }
 
@@ -151,6 +149,19 @@ function getScreenshotLabel(index: number): string {
         background: var(--accent);
         transform: scale(1.2);
       }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .portfolio-slider {
+    > .portfolio-slider__viewport {
+      min-height: 0;
+      display: block;
+    }
+
+    > .portfolio-slider__viewport > .portfolio-slider__image {
+      max-height: none;
     }
   }
 }

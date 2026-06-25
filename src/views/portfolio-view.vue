@@ -10,6 +10,7 @@ import {
   rememberFocus,
   restoreFocus,
 } from '../composables/use-focus-trap';
+import { lockBodyScroll, unlockBodyScroll } from '../composables/use-body-scroll-lock';
 import { usePortfolioContent } from '../composables/use-portfolio-content';
 import type { PortfolioItem } from '../data/profile-core';
 
@@ -52,16 +53,18 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   unbindFocusTrap?.();
-  document.body.style.overflow = '';
+  unlockBodyScroll();
 });
 
 watch(activePortfolioItem, async (value) => {
-  document.body.style.overflow = value ? 'hidden' : '';
-
   if (value) {
+    lockBodyScroll();
     await nextTick();
     closeButtonRef.value?.focus();
+    return;
   }
+
+  unlockBodyScroll();
 });
 </script>
 
