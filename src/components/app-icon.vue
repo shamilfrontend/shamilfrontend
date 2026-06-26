@@ -12,10 +12,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 const paths = computed<Record<string, string[]>>(() => ({
   user: ['M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm-8 9a8 8 0 0 1 16 0'],
-  file: [
-    'M8 3h6l4 4v14H8z',
-    'M14 3v5h5',
-  ],
+  file: ['M8 3h6l4 4v14H8z', 'M14 3v5h5'],
   briefcase: [
     'M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2',
     'M4 8h16v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z',

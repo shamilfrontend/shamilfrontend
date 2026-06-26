@@ -5,11 +5,7 @@ import { useI18n } from 'vue-i18n';
 import AppIcon from '../components/app-icon.vue';
 import ContentShell from '../components/content-shell.vue';
 import PortfolioSlider from '../components/portfolio-slider.vue';
-import {
-  bindFocusTrapWhen,
-  rememberFocus,
-  restoreFocus,
-} from '../composables/use-focus-trap';
+import { bindFocusTrapWhen, rememberFocus, restoreFocus } from '../composables/use-focus-trap';
 import { lockBodyScroll, unlockBodyScroll } from '../composables/use-body-scroll-lock';
 import { usePortfolioContent } from '../composables/use-portfolio-content';
 import type { PortfolioItem } from '../data/profile-core';
@@ -189,14 +185,8 @@ watch(activePortfolioItem, async (value) => {
         </p>
       </div>
 
-      <div
-        v-if="activePortfolioItem.description.length"
-        class="portfolio-modal__text"
-      >
-        <p
-          v-for="(paragraph, index) in activePortfolioItem.description"
-          :key="index"
-        >
+      <div v-if="activePortfolioItem.description.length" class="portfolio-modal__text">
+        <p v-for="(paragraph, index) in activePortfolioItem.description" :key="index">
           {{ paragraph }}
         </p>
       </div>

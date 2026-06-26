@@ -12,9 +12,9 @@ interface LocalizedPortfolioItem {
   description: string[];
 }
 
-const portfolioMetaRef = shallowRef<Awaited<
-  typeof import('../data/portfolio-assets')
->['portfolioMeta'] | null>(null);
+const portfolioMetaRef = shallowRef<
+  Awaited<typeof import('../data/portfolio-assets')>['portfolioMeta'] | null
+>(null);
 
 let portfolioMetaPromise: Promise<void> | null = null;
 

@@ -83,8 +83,14 @@
   --social-github-border: #d4d4d4;
   --social-github-bg: #f3f3f3;
 
-  font-family: 'Mulish', Inter, system-ui, -apple-system, BlinkMacSystemFont,
-    'Segoe UI', sans-serif;
+  font-family:
+    'Mulish',
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color: var(--text-primary);
@@ -219,11 +225,7 @@ textarea:focus-visible {
   overflow-x: clip;
   padding: 26px 24px;
   background:
-    repeating-linear-gradient(
-      25deg,
-      var(--bg-page-gradient-1) 0 2px,
-      transparent 2px 18px
-    ),
+    repeating-linear-gradient(25deg, var(--bg-page-gradient-1) 0 2px, transparent 2px 18px),
     repeating-linear-gradient(
       120deg,
       var(--bg-page-gradient-2) 0 2px,
@@ -239,11 +241,7 @@ textarea:focus-visible {
       var(--bg-page-radial-2) 0,
       var(--bg-page-radial-2-fade) 45%
     ),
-    linear-gradient(
-      120deg,
-      var(--bg-page-linear-start) 0%,
-      var(--bg-page-linear-end) 100%
-    );
+    linear-gradient(120deg, var(--bg-page-linear-start) 0%, var(--bg-page-linear-end) 100%);
 }
 
 .app-shell {
@@ -328,7 +326,9 @@ textarea:focus-visible {
 
 .mobile-menu-enter-active,
 .mobile-menu-leave-active {
-  transition: transform 0.32s ease, opacity 0.32s ease;
+  transition:
+    transform 0.32s ease,
+    opacity 0.32s ease;
 }
 
 .mobile-menu-enter-from,
@@ -368,7 +368,9 @@ textarea:focus-visible {
   font-weight: 700;
   letter-spacing: 0.4px;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .locale-switcher__button--active {
@@ -390,7 +392,9 @@ textarea:focus-visible {
   color: var(--text-icon);
   font-size: 18px;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .theme-toggle:hover {
@@ -724,7 +728,9 @@ textarea:focus-visible {
 .service-card,
 .resume-card,
 .portfolio-card {
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease;
 }
 
 .service-card p,
@@ -982,10 +988,8 @@ textarea:focus-visible {
 
 @media (max-width: 1024px) {
   .app-bg {
-    padding: max(10px, env(safe-area-inset-top))
-      max(10px, env(safe-area-inset-right))
-      max(10px, env(safe-area-inset-bottom))
-      max(10px, env(safe-area-inset-left));
+    padding: max(10px, env(safe-area-inset-top)) max(10px, env(safe-area-inset-right))
+      max(10px, env(safe-area-inset-bottom)) max(10px, env(safe-area-inset-left));
   }
 
   .app-shell {

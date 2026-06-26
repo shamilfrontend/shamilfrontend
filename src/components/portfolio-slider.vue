@@ -15,8 +15,7 @@ const activeIndex = ref(0);
 const hasMultipleImages = computed(() => props.images.length > 1);
 
 function goToPrevious(): void {
-  activeIndex.value =
-    (activeIndex.value - 1 + props.images.length) % props.images.length;
+  activeIndex.value = (activeIndex.value - 1 + props.images.length) % props.images.length;
 }
 
 function goToNext(): void {
@@ -143,7 +142,9 @@ function getScreenshotLabel(index: number): string {
       border-radius: 50%;
       background: var(--slider-dot);
       cursor: pointer;
-      transition: background 0.2s ease, transform 0.2s ease;
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
 
       &--active {
         background: var(--accent);

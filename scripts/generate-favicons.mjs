@@ -5,7 +5,6 @@ import { fileURLToPath } from 'node:url';
 
 import opentype from 'opentype.js';
 import sharp from 'sharp';
-import toIco from 'to-ico';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const publicDir = path.resolve(__dirname, '../public');
@@ -38,9 +37,7 @@ function getGlyphLayout(font, char, fontSize) {
 
 function getMonogramMetrics(font, text, fontSize, letterGap) {
   const glyphs = [...text].map((char) => getGlyphLayout(font, char, fontSize));
-  const width =
-    glyphs.reduce((sum, item) => sum + item.width, 0) +
-    letterGap * (glyphs.length - 1);
+  const width = glyphs.reduce((sum, item) => sum + item.width, 0) + letterGap * (glyphs.length - 1);
   const height = Math.max(...glyphs.map((item) => item.height));
 
   return { glyphs, width, height };
@@ -70,23 +67,13 @@ function buildIconSvg() {
 
   let fontSize = targetSize;
   let layout = getMonogramMetrics(font, text, fontSize, letterGap);
-  const scale = Math.min(
-    targetSize / layout.width,
-    targetSize / layout.height,
-  );
+  const scale = Math.min(targetSize / layout.width, targetSize / layout.height);
 
   fontSize = Math.floor(fontSize * scale);
   layout = getMonogramMetrics(font, text, fontSize, letterGap);
 
   const startX = (canvasSize - layout.width) / 2;
-  const letterPath = buildTextPath(
-    font,
-    layout.glyphs,
-    fontSize,
-    canvasSize,
-    startX,
-    letterGap,
-  );
+  const letterPath = buildTextPath(font, layout.glyphs, fontSize, canvasSize, startX, letterGap);
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${canvasSize} ${canvasSize}" role="img" aria-label="SF">
   <defs>
@@ -101,6 +88,60 @@ function buildIconSvg() {
 `;
 }
 
+function readPngDimensions(pngBuffer) {
+  return {
+    width: pngBuffer.readUInt32BE(16),
+    height: pngBuffer.readUInt32BE(20),
+  };
+}
+
+function pngBuffersToIco(pngBuffers) {
+  const headerSize = 6;
+  const dirEntrySize = 16;
+  const dirSize = dirEntrySize * pngBuffers.length;
+  const entries = [];
+  let offset = headerSize + dirSize;
+
+  for (const pngBuffer of pngBuffers) {
+    const { width, height } = readPngDimensions(pngBuffer);
+
+    entries.push({
+      width: width >= 256 ? 0 : width,
+      height: height >= 256 ? 0 : height,
+      size: pngBuffer.length,
+      offset,
+      data: pngBuffer,
+    });
+    offset += pngBuffer.length;
+  }
+
+  const ico = Buffer.alloc(offset);
+
+  ico.writeUInt16LE(0, 0);
+  ico.writeUInt16LE(1, 2);
+  ico.writeUInt16LE(pngBuffers.length, 4);
+
+  let dirOffset = headerSize;
+
+  for (const entry of entries) {
+    ico.writeUInt8(entry.width, dirOffset);
+    ico.writeUInt8(entry.height, dirOffset + 1);
+    ico.writeUInt8(0, dirOffset + 2);
+    ico.writeUInt8(0, dirOffset + 3);
+    ico.writeUInt16LE(1, dirOffset + 4);
+    ico.writeUInt16LE(32, dirOffset + 6);
+    ico.writeUInt32LE(entry.size, dirOffset + 8);
+    ico.writeUInt32LE(entry.offset, dirOffset + 12);
+    dirOffset += dirEntrySize;
+  }
+
+  for (const entry of entries) {
+    entry.data.copy(ico, entry.offset);
+  }
+
+  return ico;
+}
+
 async function generateFavicons() {
   const svg = buildIconSvg();
   const svgBuffer = Buffer.from(svg);
@@ -112,20 +153,14 @@ async function generateFavicons() {
   const pngBuffers = new Map();
 
   for (const { size, fileName } of pngOutputs) {
-    const pngBuffer = await sharp(svgBuffer)
-      .resize(size, size)
-      .png()
-      .toBuffer();
+    const pngBuffer = await sharp(svgBuffer).resize(size, size).png().toBuffer();
 
     pngBuffers.set(size, pngBuffer);
     await writeFile(path.join(publicDir, fileName), pngBuffer);
     console.log(`Generated ${fileName}`);
   }
 
-  const icoBuffer = await toIco([
-    pngBuffers.get(16),
-    pngBuffers.get(32),
-  ]);
+  const icoBuffer = pngBuffersToIco([pngBuffers.get(16), pngBuffers.get(32)]);
 
   await writeFile(path.join(publicDir, 'favicon.ico'), icoBuffer);
   console.log('Generated favicon.ico');

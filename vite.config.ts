@@ -7,8 +7,7 @@ function findBundleAsset(
   predicate: (fileName: string) => boolean,
 ): string | null {
   const entry = Object.entries(bundle).find(
-    ([fileName, chunk]) =>
-      chunk.type === 'asset' && predicate(fileName),
+    ([fileName, chunk]) => chunk.type === 'asset' && predicate(fileName),
   );
 
   return entry ? entry[0] : null;
@@ -26,18 +25,15 @@ function criticalAssetsPlugin(): Plugin {
 
         const cssFile = findBundleAsset(
           ctx.bundle,
-          (fileName) =>
-            fileName.startsWith('assets/index-') && fileName.endsWith('.css'),
+          (fileName) => fileName.startsWith('assets/index-') && fileName.endsWith('.css'),
         );
         const fontsCriticalCss = findBundleAsset(
           ctx.bundle,
-          (fileName) =>
-            fileName.includes('fonts-critical') && fileName.endsWith('.css'),
+          (fileName) => fileName.includes('fonts-critical') && fileName.endsWith('.css'),
         );
         const cyrillicFont = findBundleAsset(
           ctx.bundle,
-          (fileName) =>
-            fileName.includes('mulish-cyrillic-400') && fileName.endsWith('.woff2'),
+          (fileName) => fileName.includes('mulish-cyrillic-400') && fileName.endsWith('.woff2'),
         );
 
         const headTags: string[] = [];
@@ -72,15 +68,12 @@ function criticalAssetsPlugin(): Plugin {
             /<link rel="stylesheet"[^>]*href="[^"]*(?:index-|fonts-critical-)[^"]+\.css"[^>]*>\n?/g,
             '',
           )
-          .replace(
-            /<link rel="preload" href="[^"]*mulish-cyrillic[^"]*\.woff2"[^>]*>\n?/g,
-            '',
-          );
+          .replace(/<link rel="preload" href="[^"]*mulish-cyrillic[^"]*\.woff2"[^>]*>\n?/g, '');
 
         const scriptTag = result.match(/<script type="module"[^>]*><\/script>/)?.[0];
-        const modulePreloadTags = [
-          ...result.matchAll(/<link rel="modulepreload"[^>]*>/g),
-        ].map((match) => match[0]);
+        const modulePreloadTags = [...result.matchAll(/<link rel="modulepreload"[^>]*>/g)].map(
+          (match) => match[0],
+        );
 
         if (scriptTag) {
           result = result.replace(scriptTag, '');
@@ -90,14 +83,9 @@ function criticalAssetsPlugin(): Plugin {
           result = result.replace(`${tag}\n`, '');
         }
 
-        const scriptBlock = [scriptTag, ...modulePreloadTags]
-          .filter(Boolean)
-          .join('\n    ');
+        const scriptBlock = [scriptTag, ...modulePreloadTags].filter(Boolean).join('\n    ');
 
-        result = result.replace(
-          '</title>',
-          `</title>\n    ${headTags.join('\n    ')}`,
-        );
+        result = result.replace('</title>', `</title>\n    ${headTags.join('\n    ')}`);
 
         if (scriptBlock) {
           result = result.replace('</head>', `    ${scriptBlock}\n  </head>`);

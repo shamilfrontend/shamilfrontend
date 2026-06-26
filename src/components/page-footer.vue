@@ -6,7 +6,5 @@ const currentYear = new Date().getFullYear();
 </script>
 
 <template>
-  <footer class="page-footer">
-    © {{ currentYear }} {{ t('footer.rights') }}
-  </footer>
+  <footer class="page-footer">© {{ currentYear }} {{ t('footer.rights') }}</footer>
 </template>
