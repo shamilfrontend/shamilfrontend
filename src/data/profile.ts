@@ -9,9 +9,4 @@ export type {
   SocialLink,
 } from './profile-core';
 
-export {
-  navMeta,
-  profileInfo,
-  serviceMeta,
-  socialLinks,
-} from './profile-core';
+export { navMeta, profileInfo, serviceMeta, socialLinks } from './profile-core';

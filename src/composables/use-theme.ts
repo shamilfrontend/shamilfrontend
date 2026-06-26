@@ -5,9 +5,7 @@ export type Theme = 'light' | 'dark';
 const THEME_STORAGE_KEY = 'theme';
 
 function getSystemTheme(): Theme {
-  return window.matchMedia('(prefers-color-scheme: dark)').matches
-    ? 'dark'
-    : 'light';
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 }
 
 function getStoredTheme(): Theme | null {

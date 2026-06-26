@@ -207,9 +207,7 @@
       "title": "PPR Personal Account",
       "project": "Fleet management personal account",
       "client": "PPR",
-      "description": [
-        "Personal account for fleet management"
-      ]
+      "description": ["Personal account for fleet management"]
     },
     {
       "id": "ppr-site",
@@ -227,9 +225,7 @@
       "title": "ShootOut Game",
       "project": "Multiplayer browser game",
       "client": "Personal project",
-      "description": [
-        "Multiplayer browser game in Counter-Strike style, 2D top-down view"
-      ]
+      "description": ["Multiplayer browser game in Counter-Strike style, 2D top-down view"]
     },
     {
       "id": "flappy-petya",
@@ -253,9 +249,7 @@
       "title": "Swagger Viewer",
       "project": "Tool for displaying Swagger files",
       "client": "Personal project",
-      "description": [
-        "A browser tool for viewing and navigating Swagger/OpenAPI specifications"
-      ]
+      "description": ["A browser tool for viewing and navigating Swagger/OpenAPI specifications"]
     }
   ],
   "footer": {

@@ -39,6 +39,5 @@ const { profileInfo, services } = useProfileContent();
         <p>{{ service.description }}</p>
       </article>
     </div>
-
   </ContentShell>
 </template>

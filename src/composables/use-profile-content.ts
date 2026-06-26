@@ -85,13 +85,9 @@ export function useProfileContent() {
     () => tm('additionalEducation') as LocalizedResumeItem[],
   );
 
-  const experienceItems = computed<ResumeItem[]>(
-    () => tm('experience') as LocalizedResumeItem[],
-  );
+  const experienceItems = computed<ResumeItem[]>(() => tm('experience') as LocalizedResumeItem[]);
 
-  const skills = computed<SkillItem[]>(
-    () => tm('skills') as LocalizedSkill[],
-  );
+  const skills = computed<SkillItem[]>(() => tm('skills') as LocalizedSkill[]);
 
   return {
     profileInfo: localizedProfile,

@@ -83,11 +83,7 @@ async function revealApp(): Promise<void> {
 }
 
 onMounted(() => {
-  unbindMenuFocusTrap = bindFocusTrapWhen(
-    isMobileMenuOpen,
-    mobileMenuRef,
-    handleMenuKeydown,
-  );
+  unbindMenuFocusTrap = bindFocusTrapWhen(isMobileMenuOpen, mobileMenuRef, handleMenuKeydown);
   void revealApp();
 });
 
@@ -113,12 +109,8 @@ onBeforeUnmount(() => {
             aria-controls="mobile-menu-panel"
             @click="toggleMobileMenu"
           >
-            <span v-if="!isMobileMenuOpen" class="mobile-menu-trigger__icon">
-              ☰
-            </span>
-            <span v-else class="mobile-menu-trigger__icon">
-              ×
-            </span>
+            <span v-if="!isMobileMenuOpen" class="mobile-menu-trigger__icon"> ☰ </span>
+            <span v-else class="mobile-menu-trigger__icon"> × </span>
           </button>
 
           <LocaleSwitcher />

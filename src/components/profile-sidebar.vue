@@ -45,11 +45,7 @@ const profileImageSizes = '(min-width: 1025px) 178px, 164px';
     </div>
 
     <div class="profile-sidebar__contacts">
-      <article
-        v-for="item in contactItems"
-        :key="item.icon"
-        class="profile-sidebar__contact-item"
-      >
+      <article v-for="item in contactItems" :key="item.icon" class="profile-sidebar__contact-item">
         <p class="profile-sidebar__contact-label">
           <span class="profile-sidebar__contact-icon" aria-hidden="true">
             <AppIcon :name="item.icon" />
