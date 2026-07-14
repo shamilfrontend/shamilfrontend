@@ -15,10 +15,21 @@ import recordsImage from '../assets/portfolio/flappy-petya/records.webp';
 import settingsImage from '../assets/portfolio/flappy-petya/settings.webp';
 import menuMobileImage from '../assets/portfolio/flappy-petya/menu-mobile.webp';
 import swaggerViewerCover from '../assets/portfolio/swagger-viewer/cover.webp';
+import zaykaCover from '../assets/portfolio/zayka-chitayka/cover.webp';
+import zaykaLetters from '../assets/portfolio/zayka-chitayka/letters.webp';
+import zaykaSyllables from '../assets/portfolio/zayka-chitayka/syllables.webp';
+import zaykaWords from '../assets/portfolio/zayka-chitayka/words.webp';
 
 import type { PortfolioMetaItem } from './profile-core';
 
 export const portfolioMeta: PortfolioMetaItem[] = [
+  {
+    id: 'zayka-chitayka',
+    languages: 'Vue3, TypeScript, Vite, SCSS',
+    preview: 'https://zayka-chitayka.ru/',
+    coverImage: zaykaCover,
+    galleryImages: [zaykaCover, zaykaLetters, zaykaSyllables, zaykaWords],
+  },
   {
     id: 'ppr-cabinet',
     languages: 'Vue3, TypeScript, Vite, Vitest, SCSS',

@@ -202,6 +202,16 @@
   ],
   "portfolioItems": [
     {
+      "id": "zayka-chitayka",
+      "category": "Web Application",
+      "title": "Zayka Chitayka",
+      "project": "Children's reading learning app",
+      "client": "Personal project",
+      "description": [
+        "A web app that helps children learn to read: letters, syllables, and words with audio and mini-games"
+      ]
+    },
+    {
       "id": "ppr-cabinet",
       "category": "Web Application",
       "title": "PPR Personal Account",
