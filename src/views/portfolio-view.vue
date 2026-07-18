@@ -35,10 +35,7 @@ const filteredPortfolioItems = computed(() => {
 });
 
 watch(portfolioCategories, (categories) => {
-  if (
-    selectedCategory.value !== ALL_CATEGORIES &&
-    !categories.includes(selectedCategory.value)
-  ) {
+  if (selectedCategory.value !== ALL_CATEGORIES && !categories.includes(selectedCategory.value)) {
     selectedCategory.value = ALL_CATEGORIES;
   }
 });
@@ -106,11 +103,7 @@ watch(activePortfolioItem, async (value) => {
       <span class="page-head__line" />
     </section>
 
-    <div
-      class="portfolio-filters"
-      role="group"
-      :aria-label="t('portfolio.filters')"
-    >
+    <div class="portfolio-filters" role="group" :aria-label="t('portfolio.filters')">
       <button
         type="button"
         class="portfolio-filters__button"

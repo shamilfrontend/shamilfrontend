@@ -209,9 +209,7 @@
       "title": "Full Page Screenshoter",
       "project": "Расширение Chrome для скриншотов всей страницы",
       "client": "Личный проект",
-      "description": [
-        "Расширение для Google Chrome, которое делает скриншот всей веб-страницы"
-      ]
+      "description": ["Расширение для Google Chrome, которое делает скриншот всей веб-страницы"]
     },
     {
       "id": "zayka-chitayka",
