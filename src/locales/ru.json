@@ -58,7 +58,9 @@
     "link": "Ссылка",
     "repository": "Репозиторий",
     "close": "Закрыть окно",
-    "openProject": "Открыть проект: {title}"
+    "openProject": "Открыть проект: {title}",
+    "filters": "Фильтр по типу приложений",
+    "filterAll": "Все"
   },
   "services": [
     {
@@ -201,6 +203,16 @@
     { "title": "PhotoShop" }
   ],
   "portfolioItems": [
+    {
+      "id": "fullpage-screenshoter",
+      "category": "Расширение",
+      "title": "Full Page Screenshoter",
+      "project": "Расширение Chrome для скриншотов всей страницы",
+      "client": "Личный проект",
+      "description": [
+        "Расширение для Google Chrome, которое делает скриншот всей веб-страницы"
+      ]
+    },
     {
       "id": "zayka-chitayka",
       "category": "Веб-приложение",

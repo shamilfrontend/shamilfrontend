@@ -58,7 +58,9 @@
     "link": "Link",
     "repository": "Repository",
     "close": "Close window",
-    "openProject": "Open project: {title}"
+    "openProject": "Open project: {title}",
+    "filters": "Filter by application type",
+    "filterAll": "All"
   },
   "services": [
     {
@@ -201,6 +203,16 @@
     { "title": "PhotoShop" }
   ],
   "portfolioItems": [
+    {
+      "id": "fullpage-screenshoter",
+      "category": "Browser Extension",
+      "title": "Full Page Screenshoter",
+      "project": "Chrome extension for full-page screenshots",
+      "client": "Personal project",
+      "description": [
+        "A Google Chrome extension for capturing full-page website screenshots"
+      ]
+    },
     {
       "id": "zayka-chitayka",
       "category": "Web Application",

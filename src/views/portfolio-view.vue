@@ -13,6 +13,40 @@ import type { PortfolioItem } from '../data/profile-core';
 const { t } = useI18n();
 const { portfolioItems } = usePortfolioContent();
 
+const ALL_CATEGORIES = null;
+const selectedCategory = ref<string | null>(ALL_CATEGORIES);
+
+const portfolioCategories = computed(() => {
+  const categories = new Set<string>();
+
+  for (const item of portfolioItems.value) {
+    categories.add(item.category);
+  }
+
+  return [...categories];
+});
+
+const filteredPortfolioItems = computed(() => {
+  if (selectedCategory.value === ALL_CATEGORIES) {
+    return portfolioItems.value;
+  }
+
+  return portfolioItems.value.filter((item) => item.category === selectedCategory.value);
+});
+
+watch(portfolioCategories, (categories) => {
+  if (
+    selectedCategory.value !== ALL_CATEGORIES &&
+    !categories.includes(selectedCategory.value)
+  ) {
+    selectedCategory.value = ALL_CATEGORIES;
+  }
+});
+
+function selectCategory(category: string | null): void {
+  selectedCategory.value = category;
+}
+
 const activePortfolioItem = ref<PortfolioItem | null>(null);
 const isModalOpen = computed(() => activePortfolioItem.value !== null);
 const modalRef = ref<HTMLElement | null>(null);
@@ -72,9 +106,36 @@ watch(activePortfolioItem, async (value) => {
       <span class="page-head__line" />
     </section>
 
+    <div
+      class="portfolio-filters"
+      role="group"
+      :aria-label="t('portfolio.filters')"
+    >
+      <button
+        type="button"
+        class="portfolio-filters__button"
+        :class="{ 'portfolio-filters__button--active': selectedCategory === ALL_CATEGORIES }"
+        :aria-pressed="selectedCategory === ALL_CATEGORIES"
+        @click="selectCategory(ALL_CATEGORIES)"
+      >
+        {{ t('portfolio.filterAll') }}
+      </button>
+      <button
+        v-for="category in portfolioCategories"
+        :key="category"
+        type="button"
+        class="portfolio-filters__button"
+        :class="{ 'portfolio-filters__button--active': selectedCategory === category }"
+        :aria-pressed="selectedCategory === category"
+        @click="selectCategory(category)"
+      >
+        {{ category }}
+      </button>
+    </div>
+
     <div class="portfolio-grid">
       <article
-        v-for="item in portfolioItems"
+        v-for="item in filteredPortfolioItems"
         :key="item.id"
         class="portfolio-card portfolio-card--clickable"
         role="button"

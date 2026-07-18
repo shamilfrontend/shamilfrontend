@@ -794,6 +794,41 @@ textarea:focus-visible {
   color: var(--text-skill-chip-arrow);
 }
 
+.portfolio-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 6px 34px 18px;
+}
+
+.portfolio-filters__button {
+  height: 34px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-theme-toggle);
+  color: var(--text-icon);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.portfolio-filters__button--active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--text-on-accent);
+}
+
+.portfolio-filters__button:hover:not(.portfolio-filters__button--active) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1141,9 +1176,21 @@ textarea:focus-visible {
   .service-grid,
   .resume-grid,
   .portfolio-grid,
+  .portfolio-filters,
   .skills-block {
     padding-left: 12px;
     padding-right: 12px;
+  }
+
+  .portfolio-filters {
+    gap: 6px;
+    padding-bottom: 14px;
+  }
+
+  .portfolio-filters__button {
+    height: 30px;
+    padding: 0 12px;
+    font-size: 12px;
   }
 
   .content-shell > .section-title {
