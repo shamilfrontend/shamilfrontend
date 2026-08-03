@@ -8,6 +8,9 @@ import pprCover from '../assets/portfolio/ppr/cover.webp';
 import shootoutCover from '../assets/portfolio/shootout/cover.webp';
 import shootoutGameplay from '../assets/portfolio/shootout/gameplay.webp';
 import shootoutShop from '../assets/portfolio/shootout/shop.webp';
+import millionaireCover from '../assets/portfolio/wwtb-millionaire/cover.webp';
+import millionaireGameplay from '../assets/portfolio/wwtb-millionaire/gameplay.webp';
+import millionaireWin from '../assets/portfolio/wwtb-millionaire/win.webp';
 import coverImage from '../assets/portfolio/flappy-petya/cover.webp';
 import gameOverImage from '../assets/portfolio/flappy-petya/game-over.webp';
 import gameplayImage from '../assets/portfolio/flappy-petya/gameplay.webp';
@@ -62,6 +65,13 @@ export const portfolioMeta: PortfolioMetaItem[] = [
     preview: 'https://93.189.228.148/',
     coverImage: shootoutCover,
     galleryImages: [shootoutCover, shootoutGameplay, shootoutShop],
+  },
+  {
+    id: 'wwtb-millionaire',
+    languages: 'Vue3, TypeScript, Vite, SCSS',
+    preview: 'https://shamilfrontend.github.io/wwtbmillionaire/',
+    coverImage: millionaireCover,
+    galleryImages: [millionaireCover, millionaireGameplay, millionaireWin],
   },
   {
     id: 'flappy-petya',

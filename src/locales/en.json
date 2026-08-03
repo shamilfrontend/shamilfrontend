@@ -248,6 +248,16 @@
       "description": ["Multiplayer browser game in Counter-Strike style, 2D top-down view"]
     },
     {
+      "id": "wwtb-millionaire",
+      "category": "Game",
+      "title": "Who Wants to Be a Millionaire (Islamic Version)",
+      "project": "Browser quiz",
+      "client": "Personal project",
+      "description": [
+        "Browser quiz in the style of the TV show: 15 questions about Islam, classic lifelines, and a prize ladder up to 1,000,000 ₽"
+      ]
+    },
+    {
       "id": "flappy-petya",
       "category": "Game",
       "title": "Flappy Petya Game",
