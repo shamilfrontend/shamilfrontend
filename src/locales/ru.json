@@ -204,6 +204,14 @@
   ],
   "portfolioItems": [
     {
+      "id": "shtori-i-dekor",
+      "category": "Сайт",
+      "title": "Сайт для компании \"Шторы и декор\"",
+      "project": "Сайт для компании \"Шторы и декор\"",
+      "client": "Шторы и декор",
+      "description": ["Разработка сайта для бизнеса"]
+    },
+    {
       "id": "alina-tatoo-studio",
       "category": "Сайт",
       "title": "Сайт для компании \"Alina Tatoo Studio\"",

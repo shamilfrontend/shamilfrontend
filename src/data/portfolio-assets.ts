@@ -24,10 +24,17 @@ import zaykaSyllables from '../assets/portfolio/zayka-chitayka/syllables.webp';
 import zaykaWords from '../assets/portfolio/zayka-chitayka/words.webp';
 import fullpageScreenshoterCover from '../assets/portfolio/fullpage-screenshoter/cover.webp';
 import alinaTatooStudioCover from '../assets/portfolio/alina-tatoo-studio/cover.webp';
+import shtoriIDekorCover from '../assets/portfolio/shtori-i-dekor/cover.webp';
 
 import type { PortfolioMetaItem } from './profile-core';
 
 export const portfolioMeta: PortfolioMetaItem[] = [
+  {
+    id: 'shtori-i-dekor',
+    languages: 'Vue3, TypeScript, Vite, SCSS',
+    preview: 'https://shtori-i-dekor.ru/',
+    coverImage: shtoriIDekorCover,
+  },
   {
     id: 'alina-tatoo-studio',
     languages: 'Vue3, TypeScript, Vite, SCSS',

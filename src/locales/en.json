@@ -204,6 +204,14 @@
   ],
   "portfolioItems": [
     {
+      "id": "shtori-i-dekor",
+      "category": "Website",
+      "title": "Website for \"Shtory i Dekor\"",
+      "project": "Website for \"Shtory i Dekor\"",
+      "client": "Shtory i Dekor",
+      "description": ["Business website development"]
+    },
+    {
       "id": "alina-tatoo-studio",
       "category": "Website",
       "title": "Website for \"Alina Tatoo Studio\"",
