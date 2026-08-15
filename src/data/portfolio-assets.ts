@@ -27,10 +27,17 @@ import alinaTatooStudioCover from '../assets/portfolio/alina-tatoo-studio/cover.
 import shtoriIDekorCover from '../assets/portfolio/shtori-i-dekor/cover.webp';
 import roundtalkCover from '../assets/portfolio/roundtalk/cover.webp';
 import taskmasterCover from '../assets/portfolio/taskmaster/cover.webp';
+import swaggerMockApiCover from '../assets/portfolio/swagger-mock-api/cover.webp';
 
 import type { PortfolioMetaItem } from './profile-core';
 
 export const portfolioMeta: PortfolioMetaItem[] = [
+  {
+    id: 'swagger-mock-api',
+    languages: 'NodeJS, Vue3, TypeScript, Vite, SCSS',
+    preview: 'https://mockapi.shamilfrontend.ru/',
+    coverImage: swaggerMockApiCover,
+  },
   {
     id: 'taskmaster',
     languages: 'NodeJS, Vue3, TypeScript, Vite, SCSS',

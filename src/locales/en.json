@@ -204,6 +204,14 @@
   ],
   "portfolioItems": [
     {
+      "id": "swagger-mock-api",
+      "category": "Web Application",
+      "title": "Swagger Mock API",
+      "project": "App for generating mock data from Swagger files",
+      "client": "Personal project",
+      "description": ["An app for generating mock data from Swagger files"]
+    },
+    {
       "id": "taskmaster",
       "category": "Web Application",
       "title": "TaskMaster",

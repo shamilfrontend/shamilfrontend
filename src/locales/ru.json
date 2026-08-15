@@ -204,6 +204,16 @@
   ],
   "portfolioItems": [
     {
+      "id": "swagger-mock-api",
+      "category": "Веб-приложение",
+      "title": "Swagger Mock API",
+      "project": "Приложение для создания моковых данных на основе Swagger-файлов",
+      "client": "Личный проект",
+      "description": [
+        "Приложение для создания моковых данных на основе Swagger-файлов"
+      ]
+    },
+    {
       "id": "taskmaster",
       "category": "Веб-приложение",
       "title": "TaskMaster",
