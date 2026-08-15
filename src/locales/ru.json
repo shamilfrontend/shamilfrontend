@@ -204,6 +204,14 @@
   ],
   "portfolioItems": [
     {
+      "id": "alina-tatoo-studio",
+      "category": "Сайт",
+      "title": "Сайт для компании \"Alina Tatoo Studio\"",
+      "project": "Сайт для компании \"Alina Tatoo Studio\"",
+      "client": "Alina Tatoo Studio",
+      "description": ["Разработка сайта для бизнеса"]
+    },
+    {
       "id": "fullpage-screenshoter",
       "category": "Расширение",
       "title": "Full Page Screenshoter",

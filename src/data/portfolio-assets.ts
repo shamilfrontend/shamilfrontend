@@ -23,10 +23,17 @@ import zaykaLetters from '../assets/portfolio/zayka-chitayka/letters.webp';
 import zaykaSyllables from '../assets/portfolio/zayka-chitayka/syllables.webp';
 import zaykaWords from '../assets/portfolio/zayka-chitayka/words.webp';
 import fullpageScreenshoterCover from '../assets/portfolio/fullpage-screenshoter/cover.webp';
+import alinaTatooStudioCover from '../assets/portfolio/alina-tatoo-studio/cover.webp';
 
 import type { PortfolioMetaItem } from './profile-core';
 
 export const portfolioMeta: PortfolioMetaItem[] = [
+  {
+    id: 'alina-tatoo-studio',
+    languages: 'Vue3, TypeScript, Vite, SCSS',
+    preview: 'https://alina-tatoo-studio.ru/',
+    coverImage: alinaTatooStudioCover,
+  },
   {
     id: 'fullpage-screenshoter',
     languages: 'JavaScript, HTML, CSS',
