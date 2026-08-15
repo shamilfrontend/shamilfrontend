@@ -204,6 +204,14 @@
   ],
   "portfolioItems": [
     {
+      "id": "roundtalk",
+      "category": "Веб-приложение",
+      "title": "RoundTalk",
+      "project": "Приложение для видеозвонков и встреч",
+      "client": "Личный проект",
+      "description": ["Приложение для видеозвонков и встреч"]
+    },
+    {
       "id": "shtori-i-dekor",
       "category": "Сайт",
       "title": "Сайт для компании \"Шторы и декор\"",

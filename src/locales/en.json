@@ -204,6 +204,14 @@
   ],
   "portfolioItems": [
     {
+      "id": "roundtalk",
+      "category": "Web Application",
+      "title": "RoundTalk",
+      "project": "Video calls and meetings app",
+      "client": "Personal project",
+      "description": ["An app for video calls and meetings"]
+    },
+    {
       "id": "shtori-i-dekor",
       "category": "Website",
       "title": "Website for \"Shtory i Dekor\"",

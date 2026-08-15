@@ -25,10 +25,17 @@ import zaykaWords from '../assets/portfolio/zayka-chitayka/words.webp';
 import fullpageScreenshoterCover from '../assets/portfolio/fullpage-screenshoter/cover.webp';
 import alinaTatooStudioCover from '../assets/portfolio/alina-tatoo-studio/cover.webp';
 import shtoriIDekorCover from '../assets/portfolio/shtori-i-dekor/cover.webp';
+import roundtalkCover from '../assets/portfolio/roundtalk/cover.webp';
 
 import type { PortfolioMetaItem } from './profile-core';
 
 export const portfolioMeta: PortfolioMetaItem[] = [
+  {
+    id: 'roundtalk',
+    languages: 'NodeJS, WebSockets, WebRTC, Vue3, TypeScript, Vite, SCSS',
+    preview: 'https://roundtalk.shamilfrontend.ru/',
+    coverImage: roundtalkCover,
+  },
   {
     id: 'shtori-i-dekor',
     languages: 'Vue3, TypeScript, Vite, SCSS',
