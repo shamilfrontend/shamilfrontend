@@ -204,6 +204,14 @@
   ],
   "portfolioItems": [
     {
+      "id": "taskmaster",
+      "category": "Web Application",
+      "title": "TaskMaster",
+      "project": "Team and project management app",
+      "client": "Personal project",
+      "description": ["An app for managing teams and projects"]
+    },
+    {
       "id": "roundtalk",
       "category": "Web Application",
       "title": "RoundTalk",

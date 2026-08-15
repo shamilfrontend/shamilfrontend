@@ -26,10 +26,17 @@ import fullpageScreenshoterCover from '../assets/portfolio/fullpage-screenshoter
 import alinaTatooStudioCover from '../assets/portfolio/alina-tatoo-studio/cover.webp';
 import shtoriIDekorCover from '../assets/portfolio/shtori-i-dekor/cover.webp';
 import roundtalkCover from '../assets/portfolio/roundtalk/cover.webp';
+import taskmasterCover from '../assets/portfolio/taskmaster/cover.webp';
 
 import type { PortfolioMetaItem } from './profile-core';
 
 export const portfolioMeta: PortfolioMetaItem[] = [
+  {
+    id: 'taskmaster',
+    languages: 'NodeJS, Vue3, TypeScript, Vite, SCSS',
+    preview: 'https://taskmaster.shamilfrontend.ru/',
+    coverImage: taskmasterCover,
+  },
   {
     id: 'roundtalk',
     languages: 'NodeJS, WebSockets, WebRTC, Vue3, TypeScript, Vite, SCSS',

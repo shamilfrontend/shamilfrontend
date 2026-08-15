@@ -204,6 +204,14 @@
   ],
   "portfolioItems": [
     {
+      "id": "taskmaster",
+      "category": "Веб-приложение",
+      "title": "TaskMaster",
+      "project": "Приложение для управления командами и проектами",
+      "client": "Личный проект",
+      "description": ["Приложение для управления командами и проектами"]
+    },
+    {
       "id": "roundtalk",
       "category": "Веб-приложение",
       "title": "RoundTalk",
